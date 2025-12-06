@@ -36,7 +36,8 @@ I have published some papers about these topics with total <a href='https://scho
 [Enriched text-guided variational multimodal knowledge distillation network (VMD) for automated diagnosis of plaque vulnerability in 3D carotid artery MRI.](https://arxiv.org/abs/2509.11924)
 
 **B Cao**, F Yu, M Feng, SH Zhang, X Meng, Y Zhang, Z Qian, J Lu.
-- This study explores whether beneficial information from clinical reports can be transferred to visual diagnostic tasks through the lens of image-text paired knowledge distillation. 
+
+This study explores whether beneficial information from clinical reports can be transferred to visual diagnostic tasks through the image-text paired knowledge distillation. 
 </div>
 </div>
 
