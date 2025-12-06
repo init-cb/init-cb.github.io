@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Bo Cao"
-description              : "I am currently pursuing a Ph.D. in Biomedical Engineering at Fuwai Hospital, Peking Union Medical College (Chinese Academy of Medical Sciences & Tsinghua University), under the supervision of Prof. Minjie Lu. Previously, I obtained my research-based master’s degree in Biomedical Engineering from the First Clinical Medical College of Capital Medical University (Xuanwu Hospital), advised by Prof. Jie Lu. My research interests focus on medical artificial intelligence applications, multimodal vision-language models, and their clinical translation. "
+description              : "Currently Ph.D student, Fuwai Hospital, Peiking Union Medical College & Chinese Academy of Medical Sciences"
 repository               : "BoCao/init-cb.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -23,8 +23,8 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Bo Cao"
   avatar           : "images/android-chrome-512x512.png"
-  bio              : "Lorem ipsum College"
-  location         : "Beijing, China"
+  bio              : "Fuwai Hospital, Peiking Union Medical College."
+  location         : "Beijing, China."
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=dolRmMkAAAAJ"
