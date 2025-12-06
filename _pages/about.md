@@ -23,7 +23,7 @@ My research interests focus on computer vision, vision-language alignment, Multi
 
 Previously, I obtained my master’s degree in Biomedical Engineering from the First Clinical Medical College(Xuanwu Hospital), Capital Medical University, supervised by Prof. Jie Lu. I did some research about **atherosclerosis** in the **carotid MRI** and brain during this stage.
 
-I have published some papers about these topics with total <a href='https://scholar.google.com/citations?user=dolRmMkAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).
+I have published some papers about these topics with total <a href='https://scholar.google.com/citations?user=dolRmMkAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
 
 # 🔥 News
 - *2025.06*: &nbsp;🎉I have joined TowardPi (Beijing) Medical Technology Ltd. as an intern of LLM Algorithm Engineer.  
