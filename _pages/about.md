@@ -21,7 +21,6 @@ I am currently a Ph.D. student in Biomedical Engineering at Fuwai Hospital, Peki
 
 My research interests focus on computer vision, vision-language alignment, and magnetic resonance imaging artificial intelligence applications. I have published some papers about these topics with total <a href='https://scholar.google.com/citations?user=dolRmMkAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> <a href='https://scholar.google.com/citations?user=dolRmMkAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).
 
-
 # 🔥 News
 - *2025.06*: &nbsp;🎉I have joined TowardPi (Beijing) Medical Technology Ltd. as an intern of LLM Algorithm Engineer.  
 
