@@ -29,7 +29,17 @@ I have published some papers about these topics with total <a href='https://scho
 - *2025.06*: &nbsp;🎉I have joined TowardPi (Beijing) Medical Technology Ltd. as an intern of LLM Algorithm Engineer.  
 
 # 📝 Publications 
-- [Enriched text-guided variational multimodal knowledge distillation network (VMD) for automated diagnosis of plaque vulnerability in 3D carotid artery MRI.](https://arxiv.org/abs/2509.11924) **B Cao**, F Yu, M Feng, SH Zhang, X Meng, Y Zhang, Z Qian, J Lu. arXiv preprint.
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv preprint</div><img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/9b54a466-cdfe-4457-b91e-e56b125cf70d" />
+</div></div>
+<div class='paper-box-text' markdown="1">
+
+[Enriched text-guided variational multimodal knowledge distillation network (VMD) for automated diagnosis of plaque vulnerability in 3D carotid artery MRI.](https://arxiv.org/abs/2509.11924)
+
+**B Cao**, F Yu, M Feng, SH Zhang, X Meng, Y Zhang, Z Qian, J Lu.
+- This study explores whether beneficial information from clinical reports can be transferred to visual diagnostic tasks through the lens of image-text paired knowledge distillation. 
+</div>
+</div>
+
 - [Variational multimodal distillation for diagnosing plaque vulnerability in carotid 3D MRI.](https://adsmi-miccai.github.io/) **B Cao**, F Yu, M Feng, Z Qian, J Lu. Workshop of **MICCAI 2024**.
 - [Development and validation of MRI-based deep learning radiomics signatures to predict high-risk plaques in patients with carotid atherosclerosis.] Q Gai, J Zhou, Y Zhang, **B Cao**, J Lu. Under review.
 
