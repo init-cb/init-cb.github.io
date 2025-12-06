@@ -43,4 +43,5 @@ I have published some papers about these topics with total <a href='https://scho
 - 
 
 # 💻 Internships
-- *2025.06 - 2025.09*, [TowardPi (Beijing) Medical Technology Ltd.](https://en.towardpi.com/), China.
+- *2025.06 - 2025.09*, **LLM Algorithm Engineer** [TowardPi (Beijing) Medical Technology Ltd.](https://en.towardpi.com/), Beijing, China.
+- *2023.09 - 2024.03*, **Algorithm Engineer** [Beijing United lmaging Intelligent Imaging Technology Research Institute](https://global.united-imaging.com/en/), Beijing, China.
