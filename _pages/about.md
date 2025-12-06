@@ -17,9 +17,13 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am currently a Ph.D. student in Biomedical Engineering at Fuwai Hospital, Peking Union Medical College (Chinese Academy of Medical Sciences), under the supervision of Prof. Minjie Lu. Previously, I obtained my master’s degree in Biomedical Engineering from the First Clinical Medical College(Xuanwu Hospital), Capital Medical University, supervised by Prof. Jie Lu. 
+I am currently a Ph.D. student in Biomedical Engineering at Fuwai Hospital, Peking Union Medical College (Chinese Academy of Medical Sciences), under the supervision of Prof. Minjie Lu.
 
-My research interests focus on computer vision, vision-language alignment, and magnetic resonance imaging artificial intelligence applications. I have published some papers about these topics with total <a href='https://scholar.google.com/citations?user=dolRmMkAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> <a href='https://scholar.google.com/citations?user=dolRmMkAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).
+My research interests focus on computer vision, vision-language alignment, Multimodal Large Language Model, and magnetic resonance imaging(MRI) artificial intelligence applications. And my current project focuses on visual language alignment in **cardiac MRI** and **clinical report**, including **visual question answering** and **MRI report generation**.
+
+Previously, I obtained my master’s degree in Biomedical Engineering from the First Clinical Medical College(Xuanwu Hospital), Capital Medical University, supervised by Prof. Jie Lu. I did some research about **atherosclerosis** in the **carotid MRI** and brain during this stage.
+
+I have published some papers about these topics with total <a href='https://scholar.google.com/citations?user=dolRmMkAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).
 
 # 🔥 News
 - *2025.06*: &nbsp;🎉I have joined TowardPi (Beijing) Medical Technology Ltd. as an intern of LLM Algorithm Engineer.  
