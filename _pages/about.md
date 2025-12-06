@@ -37,12 +37,12 @@ I have published some papers about these topics with total <a href='https://scho
 
 **B Cao**, F Yu, M Feng, SH Zhang, X Meng, Y Zhang, Z Qian, J Lu.
 
-This study explores whether beneficial information from clinical reports can be transferred to visual diagnostic tasks through the image-text paired knowledge distillation. 
+- This study explores whether beneficial information from clinical reports can be transferred to visual diagnostic tasks through the image-text paired knowledge distillation. 
 </div>
 </div>
 
 - [Variational multimodal distillation for diagnosing plaque vulnerability in carotid 3D MRI.](https://adsmi-miccai.github.io/) **B Cao**, F Yu, M Feng, Z Qian, J Lu. Workshop of **MICCAI 2024**.
-- [Development and validation of MRI-based deep learning radiomics signatures to predict high-risk plaques in patients with carotid atherosclerosis.] Q Gai, J Zhou, Y Zhang, **B Cao**, J Lu. Under review.
+- [Development and validation of MRI-based deep learning radiomics signatures to predict high-risk plaques in patients with carotid atherosclerosis.]() Q Gai, J Zhou, Y Zhang, **B Cao**, J Lu. Under review.
 
 
 
