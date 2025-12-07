@@ -23,14 +23,20 @@ import yaml
 # ------------ 你关注的会议：按 ccfddl 仓库实际路径修改这里 ------------
 
 TARGET_CONFS = [
-    {"sub": "AI", "name": "aaai",   "label": "AAAI"},
+{"sub": "AI", "name": "aaai",   "label": "AAAI"},
+    {"sub": "AI", "name": "nips",   "label": "NeuIPS"},
     {"sub": "AI", "name": "cvpr",   "label": "CVPR"},
+    {"sub": "AI", "name": "emnlp",   "label": "EMNLP"},
     {"sub": "AI", "name": "iccv",   "label": "ICCV"},
     {"sub": "AI", "name": "eccv",   "label": "ECCV"},
-    {"sub": "DB", "name": "www",    "label": "WWW"},   # 如果实际不是 DB/www.yml，请改
+    {"sub": "AI", "name": "ijcai",   "label": "IJCAI"},
+    {"sub": "MX", "name": "www",    "label": "WWW"},
     {"sub": "AI", "name": "bmvc",   "label": "BMVC"},
     {"sub": "MX", "name": "miccai", "label": "MICCAI"},
+    {"sub": "MX", "name": "bibm", "label": "BIBM"},
     {"sub": "MX", "name": "isbi",   "label": "ISBI"},
+    {"sub": "AI", "name": "icaps",   "label": "ICAPS"},
+    {"sub": "CG", "name": "icassp",   "label": "ICASSP"},
 ]
 
 RAW_BASE = "https://raw.githubusercontent.com/ccfddl/ccf-deadlines/main"
