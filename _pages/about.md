@@ -67,5 +67,5 @@ I have published some papers about these topics with total <a href='https://scho
 
 # 🕺Tracks
 <div  width="500" height="300">
- <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=VF6O719bynbNiIaQTdNJx3NJZY40ngAXbWC5Rk0_cu0"></script>
+ <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=n&d=VF6O719bynbNiIaQTdNJx3NJZY40ngAXbWC5Rk0_cu0&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
 </div>
