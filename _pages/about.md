@@ -65,7 +65,7 @@ I have published some papers about these topics with total <a href='https://scho
 - 
 
 
-# 🕺Tracks
+# 🕺 Tracks
 {% include ccf_deadlines.html %}
 
 <div  width="500" height="300">
