@@ -46,9 +46,9 @@ I have published some papers about these topics with total <a href='https://scho
 - [Development and validation of MRI-based deep learning radiomics signatures to predict high-risk plaques in patients with carotid atherosclerosis.] Q Gai<sup>†</sup>, J Zhou<sup>†</sup>, Y Zhang<sup>†</sup>, **B Cao**, J Lu. Under review.
 
 # 📖 Educations
-- *2025.09 - now*, Ph.D., Biomedical Engineering, Fuwai Hospital, Peking Union Medical College (Chinese Academy of Medical Sciences), China.
-- *2022.09 - 2025.06*, Master, Biomedical Engineering, First Clinical Medical College(Xuanwu Hospital), Capital Medical University, China.
-- *2018.09 - 2022.06*, Bachelor, Software Engineering, Chongqing University of Technology, China.
+- *2025.09 - now*,     **Ph.D.**,    Biomedical Engineering,   Fuwai Hospital, **Peking Union Medical College (Chinese Academy of Medical Sciences)**, China.
+- *2022.09 - 2025.06*, **Master**,   Biomedical Engineering,   Xuanwu Hospital, **Capital Medical University**, China.
+- *2018.09 - 2022.06*, **Bachelor**, Software Engineering,     School of Artificial Intelligence, **Chongqing University of Technology**, China.
 
 
 # 💻 Internships
