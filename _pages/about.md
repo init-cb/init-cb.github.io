@@ -61,7 +61,7 @@ I have published some papers about these topics with total <a href='https://scho
 - *2023.09 - 2024.03*, **Algorithm Engineer** [Beijing United lmaging Intelligent Imaging Technology Research Institute](https://global.united-imaging.com/en/), Beijing, China.
 
 
-# 🎖 Honors and Awards
+# 🥇 Honors and Awards
 - 
 
 
