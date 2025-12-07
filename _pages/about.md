@@ -30,7 +30,7 @@ I have published some papers about these topics with total <a href='https://scho
 
 # 📝 Publications 
 ### <sup>†</sup> means co-first author, **bold** highlight myself.
-<div class='paper-box'
+<div class='paper-box'>
   <div class='paper-box-image'>
     <div>
       <div class="badge">arXiv preprint</div>
