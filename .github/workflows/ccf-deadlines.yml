@@ -1,0 +1,47 @@
+name: Update CCF Deadlines
+
+on:
+  schedule:
+    - cron: "0 2 * * *"      # 每天 02:00 UTC 跑一次
+  workflow_dispatch:          # 允许手动触发
+  push:
+    paths:
+      - ".github/workflows/ccf-deadlines.yml"
+      - "scripts/update_ccf_deadlines.py"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # 允许使用 GITHUB_TOKEN 推送代码
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install requests pyyaml
+
+      - name: Generate deadlines HTML
+        run: |
+          python scripts/update_ccf_deadlines.py
+
+      - name: Commit changes if needed
+        run: |
+          if git diff --quiet; then
+            echo "No changes in deadlines."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add _includes/ccf_deadlines.html
+            git commit -m "chore: update CCF deadlines"
+            git push
+          fi
