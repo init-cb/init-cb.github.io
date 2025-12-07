@@ -2,14 +2,14 @@
 """
 从 ccfddl/ccf-deadlines 拉取指定会议的信息，生成 _includes/ccf_deadlines.html
 
-功能：
-1. 展示：会议名+年份（如 MICCAI 2025）、截稿时间、会议日期、地点、CCF 等级、时区、comment。
-2. 计算：离截稿还剩多少天。
-3. 按状态着色：
-   - 截稿未到：浅绿色（Open）
-   - 截稿已过但会议尚未开始/结束：浅蓝色（On the way）
-   - 会议也结束了：浅灰色（Finished）
-4. 页脚显示：更新时间（含 UTC 时区声明）。
+满足需求：
+1. 对于同一会议，只展示“最近的一届”（最大 year），无论是 open / on the way / finished。
+2. 截稿日期为 TBD 且会议日期尚未来临的会议，视为 open（绿色）。
+3. 表格支持前端排序和筛选：
+   - 列名：Conference / Deadline / Days / Date & Place / Status
+   - 点击表头可排序（按字母、deadline 时间、days、status 等）。
+   - 顶部有 status 下拉框和搜索框。
+   - 默认顺序：按 status（open → on the way → finished），然后按会议名首字母。
 """
 
 import datetime as dt
@@ -20,16 +20,14 @@ from typing import Any, Dict, List, Optional, Tuple
 import requests
 import yaml
 
-# 你关心的会议列表：根据 ccfddl 仓库里的路径来填
+# ------------ 你关注的会议：按 ccfddl 仓库实际路径修改这里 ------------
+
 TARGET_CONFS = [
     {"sub": "AI", "name": "aaai",   "label": "AAAI"},
-    {"sub": "AI", "name": "nips",   "label": "NeuIPS"},
     {"sub": "AI", "name": "cvpr",   "label": "CVPR"},
-    {"sub": "AI", "name": "emnlp",   "label": "EMNLP"},
     {"sub": "AI", "name": "iccv",   "label": "ICCV"},
     {"sub": "AI", "name": "eccv",   "label": "ECCV"},
-    {"sub": "AI", "name": "ijcai",   "label": "IJCAI"},
-    {"sub": "MX", "name": "www",    "label": "WWW"},
+    {"sub": "DB", "name": "www",    "label": "WWW"},   # 如果实际不是 DB/www.yml，请改
     {"sub": "AI", "name": "bmvc",   "label": "BMVC"},
     {"sub": "MX", "name": "miccai", "label": "MICCAI"},
     {"sub": "MX", "name": "isbi",   "label": "ISBI"},
@@ -42,9 +40,6 @@ OUT_FILE = Path("_includes/ccf_deadlines.html")
 # ===================== 工具函数 =====================
 
 def fetch_conf_yaml(conf_def: Dict[str, str]) -> List[Dict[str, Any]]:
-    """
-    从 ccfddl 仓库拉对应的 yml 文件
-    """
     url = f"{RAW_BASE}/conference/{conf_def['sub']}/{conf_def['name']}.yml"
     print(f"[INFO] Fetching {url}")
     resp = requests.get(url, timeout=20)
@@ -57,31 +52,23 @@ def fetch_conf_yaml(conf_def: Dict[str, str]) -> List[Dict[str, Any]]:
 
 def extract_ranks(entry: Dict[str, Any]) -> Tuple[Optional[str], Optional[str], Optional[str]]:
     """
-    兼容新旧两种写法，提取：
-    - CCF 等级
-    - CORE 等级
-    - TH-CPL 等级
-    可能的结构：
-    1) 旧：
-       rank: A
-    2) 新：
-       ccf: A
-       rank:
-         core: A*
-         thcpl: A
+    提取 CCF / CORE / TH-CPL 等级，兼容旧格式：
+      rank: A
+    和新格式：
+      ccf: A
+      rank:
+        core: A*
+        thcpl: A
     """
     ccf_rank = entry.get("ccf")
     core_rank = None
     thcpl_rank = None
 
     rank = entry.get("rank")
-
     if isinstance(rank, str):
-        # 旧格式：把 rank 当作 CCF 等级
         if ccf_rank is None:
             ccf_rank = rank
     elif isinstance(rank, dict):
-        # 新格式
         core_rank = rank.get("core")
         thcpl_rank = rank.get("thcpl")
         if ccf_rank is None:
@@ -91,15 +78,11 @@ def extract_ranks(entry: Dict[str, Any]) -> Tuple[Optional[str], Optional[str], 
 
 
 def parse_timezone_offset(tz_str: str) -> dt.timezone:
-    """
-    把 ccfddl 里的 timezone 字符串（UTC+8, UTC-5, AoE 等）转成 Python 的 timezone 对象
-    """
     if not tz_str:
         return dt.timezone.utc
 
     tz = tz_str.strip().upper()
     if tz == "AOE":
-        # AoE ≈ UTC-12
         return dt.timezone(dt.timedelta(hours=-12))
 
     m = re.match(r"UTC([+-])(\d{1,2})(?::(\d{2}))?$", tz)
@@ -110,25 +93,18 @@ def parse_timezone_offset(tz_str: str) -> dt.timezone:
         offset_min = sign * (hours * 60 + minutes)
         return dt.timezone(dt.timedelta(minutes=offset_min))
 
-    # 兜底：解析失败就按 UTC 处理
     return dt.timezone.utc
 
 
 def parse_deadline_local(ddl_str: str) -> Optional[dt.datetime]:
     """
-    尝试把 deadline 字符串解析成「本地时间的 naive datetime」。
-    支持形如 '2025-03-01 23:59:59'，后面如果多了 AoE / UTC+8 等，我们在外层处理。
+    把 deadline 字符串尽量解析成本地 naive datetime，支持：
+      '2025-03-01 23:59:59'（后面带 AoE / UTC+8 会在外层处理）
     """
     if not ddl_str or ddl_str == "TBD":
         return None
-
-    # 只取前两个 token：日期+时间
     parts = ddl_str.split()
-    if len(parts) >= 2:
-        core = " ".join(parts[:2])
-    else:
-        core = parts[0]
-
+    core = " ".join(parts[:2]) if len(parts) >= 2 else parts[0]
     try:
         return dt.datetime.fromisoformat(core.replace(" ", "T"))
     except Exception:
@@ -136,9 +112,6 @@ def parse_deadline_local(ddl_str: str) -> Optional[dt.datetime]:
 
 
 def to_utc(local_dt: dt.datetime, tz_str: str) -> dt.datetime:
-    """
-    把 本地时间 + tz_str 转成 UTC 时间
-    """
     tz = parse_timezone_offset(tz_str)
     return local_dt.replace(tzinfo=tz).astimezone(dt.timezone.utc)
 
@@ -149,16 +122,15 @@ def pick_deadline_and_status(
     now_utc: dt.datetime,
 ) -> Tuple[Optional[Dict[str, Any]], Optional[dt.datetime], Optional[int], str]:
     """
-    从 timeline 中选一个「代表性」的 deadline，并返回：
-    - 对应的 item
-    - deadline 的 UTC 时间（可能为 None）
-    - 剩余天数（可能为 None）
-    - deadline 状态：'open' / 'passed' / 'unknown'
+    timeline → 选一个代表性的 deadline：
+      - 优先：未来最近的；
+      - 否则：最后一个（最晚的）。
+    返回：
+      ddl_item, ddl_utc, days_left, ddl_status(open/passed/unknown)
     """
     if not timeline:
         return None, None, None, "unknown"
 
-    # 找「未来最近」的 deadline；如果没有，就找最后一个
     best_future_item = None
     best_future_utc = None
     last_item = None
@@ -171,12 +143,10 @@ def pick_deadline_and_status(
             continue
         ddl_utc = to_utc(local_dt, timezone_str)
 
-        # 记录「最后一条」以防都在过去
         if last_utc is None or ddl_utc > last_utc:
             last_utc = ddl_utc
             last_item = item
 
-        # 找未来最近的
         if ddl_utc >= now_utc:
             if best_future_utc is None or ddl_utc < best_future_utc:
                 best_future_utc = ddl_utc
@@ -191,51 +161,27 @@ def pick_deadline_and_status(
     else:
         return None, None, None, "unknown"
 
-    # 计算剩余天数
     days_left = (ddl_utc.date() - now_utc.date()).days
-
-    # 状态
-    if ddl_utc >= now_utc:
-        status = "open"
-    else:
-        status = "passed"
-
+    status = "open" if ddl_utc >= now_utc else "passed"
     return ddl_item, ddl_utc, days_left, status
 
 
 MONTHS = {
-    "JAN": 1,
-    "FEB": 2,
-    "MAR": 3,
-    "APR": 4,
-    "MAY": 5,
-    "JUN": 6,
-    "JUL": 7,
-    "AUG": 8,
-    "SEP": 9,
-    "SEPT": 9,
-    "OCT": 10,
-    "NOV": 11,
-    "DEC": 12,
+    "JAN": 1, "FEB": 2, "MAR": 3, "APR": 4, "MAY": 5, "JUN": 6,
+    "JUL": 7, "AUG": 8, "SEP": 9, "SEPT": 9, "OCT": 10, "NOV": 11, "DEC": 12,
 }
 
 
 def parse_conf_end_date(date_str: str, year: Optional[int]) -> Optional[dt.date]:
     """
-    尝试从 ccfddl 的 date 字段里解析 conference 的「结束日期」，用于区分：
-    - 截稿已过但会议还没开始/结束（"on the way"）
-    - 会议也结束了（"finished"）
-
-    典型格式示例：
-      "Mar 12-16, 2025"
-      "Sep 29 - Oct 5, 2025"（这种就比较难，简单起见只看最后的年份那一段）
-
-    解析失败就返回 None。
+    尝试解析会议结束日期；典型：'Mar 12-16, 2025'
+    解析失败则退化成该年的 12-31（如果有 year），用于区分 finished / on_the_way。
     """
     if not date_str:
+        if isinstance(year, int):
+            return dt.date(year, 12, 31)
         return None
 
-    # 优先匹配类似 "Mar 12-16, 2025"
     m = re.search(
         r"([A-Za-z]+)\s+(\d{1,2})(?:\s*[-–]\s*(\d{1,2}))?,\s*(\d{4})",
         date_str,
@@ -249,10 +195,8 @@ def parse_conf_end_date(date_str: str, year: Optional[int]) -> Optional[dt.date]
         if mon:
             return dt.date(year_val, mon, end_day)
 
-    # 如果没匹配到，就退而求其次：只用 year 字段，设为当年 12-31
     if isinstance(year, int):
         return dt.date(year, 12, 31)
-
     return None
 
 
@@ -261,7 +205,7 @@ def build_year_candidates(
     now_utc: dt.datetime,
 ) -> List[Dict[str, Any]]:
     """
-    把一个 entry 里的多届 confs 展开成多个 candidate，供后面选择「当前最相关的一届」。
+    把一个 entry 里的多届 confs 展开成多个 candidate。
     """
     title = entry.get("title", "").strip()
     description = entry.get("description", "").strip()
@@ -269,6 +213,7 @@ def build_year_candidates(
 
     confs = entry.get("confs") or []
     candidates = []
+    today = now_utc.date()
 
     for c in confs:
         year = c.get("year")
@@ -285,10 +230,17 @@ def build_year_candidates(
             timeline, timezone_str, now_utc
         )
 
-        # 根据 deadline & conference date 判定整体状态
-        today = now_utc.date()
+        deadline_str = ddl_item.get("deadline", "TBD") if ddl_item else "TBD"
+        ddl_comment = ddl_item.get("comment", "") if ddl_item else ""
+
         conf_end_date = parse_conf_end_date(date_str, year)
 
+        # === 需求 2：TBD 且会议尚未开始/结束 → 视为 open ===
+        if (not ddl_item or deadline_str == "TBD") and conf_end_date and conf_end_date >= today:
+            ddl_status = "open"
+            days_left = None  # 没有具体 ddl，天数设为 None
+
+        # 根据 ddl_status + conf_end_date 判 overall_status
         if ddl_status == "open":
             overall_status = "open"
         else:
@@ -296,9 +248,6 @@ def build_year_candidates(
                 overall_status = "on_the_way"
             else:
                 overall_status = "finished"
-
-        deadline_str = ddl_item.get("deadline", "TBD") if ddl_item else "TBD"
-        ddl_comment = ddl_item.get("comment", "") if ddl_item else ""
 
         candidates.append(
             {
@@ -324,36 +273,30 @@ def build_year_candidates(
     return candidates
 
 
-def choose_best_candidate(candidates: List[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+def choose_latest_candidate(candidates: List[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
     """
-    在多届会议中，选择「当前最相关的一届」：
-    优先级：
-    1. overall_status: open > on_the_way > finished
-    2. 在同一状态下：
-       - 有 deadline_utc 的，按 deadline 早的在前
-       - 没有 deadline_utc 的，按 year 小的在前
+    需求 1：无论状态如何，总是选择“最近的一届”展示（最大 year）。
+    如果同一年有多条，就选 deadline 最靠前的一条（大部分会议一年只有一个 conf）。
     """
     if not candidates:
         return None
 
+    max_year = max(c["year"] for c in candidates if isinstance(c.get("year"), int))
+    latest = [c for c in candidates if c.get("year") == max_year]
+    if len(latest) == 1:
+        return latest[0]
+
+    # 同一年多条：按 deadline_utc 最早的在前；没有 ddl 的排后
     def key(c: Dict[str, Any]):
-        status_rank = {"open": 0, "on_the_way": 1, "finished": 2}.get(
-            c["overall_status"], 3
-        )
         ddl_utc = c.get("deadline_utc")
         if ddl_utc is None:
-            # 没有具体 ddl 的，用当年 12-31 作为近似
-            year = c.get("year") or 9999
-            ddl_utc = dt.datetime(year, 12, 31, tzinfo=dt.timezone.utc)
-        return (status_rank, ddl_utc)
+            ddl_utc = dt.datetime.max.replace(tzinfo=dt.timezone.utc)
+        return ddl_utc
 
-    return min(candidates, key=key)
+    return min(latest, key=key)
 
 
 def format_days_left(days_left: Optional[int]) -> str:
-    """
-    把剩余天数格式化成人类可读文本
-    """
     if days_left is None:
         return "TBD"
     if days_left > 0:
@@ -364,61 +307,98 @@ def format_days_left(days_left: Optional[int]) -> str:
 
 
 def status_style_and_label(overall_status: str) -> Tuple[str, str]:
-    """
-    根据整体状态，返回：
-    - 行的 inline style
-    - 状态文本
-    """
     if overall_status == "open":
-        # 浅绿色
         return 'background-color:#e9f7ef;', "Open"
     if overall_status == "on_the_way":
-        # 浅蓝色
         return 'background-color:#e7f1fb;', "On the way"
-    # finished
     return 'background-color:#f2f2f2;color:#777;', "Finished"
 
 
 def generate_html(rows: List[Dict[str, Any]], now_utc: dt.datetime) -> str:
     """
-    rows: 每个元素包含：
-      label, title, description, year, link,
-      deadline_str, deadline_comment, timezone,
+    rows 每个元素包含：
+      label, year, link,
+      description, ranks, deadline_str, deadline_comment, timezone,
       days_left_str, date_str, place,
-      ccf_rank, core_rank, thcpl_rank,
-      overall_status, row_style, status_label
+      overall_status, deadline_utc, 等。
     """
     lines: List[str] = []
 
-    lines.append('<table class="table table-sm">')
+    # ---- 控件：过滤 + 搜索 ----
+    lines.append('<div id="ccf-deadlines-controls" style="margin-bottom:0.5rem;">')
+    lines.append(
+        '  <label style="margin-right:0.75rem;">'
+        'Status: '
+        '<select id="ccf-status-filter">'
+        '<option value="all">All</option>'
+        '<option value="open">Open</option>'
+        '<option value="on_the_way">On the way</option>'
+        '<option value="finished">Finished</option>'
+        '</select>'
+        '</label>'
+    )
+    lines.append(
+        '  <label>'
+        'Search: '
+        '<input type="text" id="ccf-search" '
+        'placeholder="Type to filter..." '
+        'style="max-width:200px;">'
+        '</label>'
+    )
+    lines.append("</div>")
+
+    # ---- 表格 ----
+    lines.append('<table class="table table-sm" id="ccf-deadlines-table">')
     lines.append("  <thead>")
     lines.append(
         "    <tr>"
-        "<th>Conference</th>"
-        "<th>Deadline</th>"
-        "<th>Days</th>"
-        "<th>Date &amp; Place</th>"
-        "<th>Status</th>"
+        '<th data-sort="conf">Conference</th>'
+        '<th data-sort="deadline">Deadline</th>'
+        '<th data-sort="days">Days</th>'
+        '<th data-sort="text">Date &amp; Place</th>'
+        '<th data-sort="status">Status</th>'
         "</tr>"
     )
     lines.append("  </thead>")
     lines.append("  <tbody>")
 
-    # 按 deadline_utc 排序（最紧迫在上）；没有 ddl 的排在后面
-    def sort_key(r: Dict[str, Any]):
-        ddl_utc = r.get("deadline_utc")
-        if ddl_utc is None:
-            ddl_utc = dt.datetime.max.replace(tzinfo=dt.timezone.utc)
-        return ddl_utc
+    # 默认顺序：status(open→on_the_way→finished) 然后按会议名(label) 排
+    def default_sort_key(r: Dict[str, Any]):
+        status_rank = {"open": 0, "on_the_way": 1, "finished": 2}.get(
+            r["overall_status"], 3
+        )
+        return (status_rank, r["label"], r["year"])
 
-    for r in sorted(rows, key=sort_key):
+    for r in sorted(rows, key=default_sort_key):
         style = r["row_style"]
-        conf_html = (
-            f'<strong><a href="{r["link"]}" target="_blank" '
-            f'rel="noopener noreferrer">{r["label"]} {r["year"]}</a></strong>'
+        status = r["overall_status"]
+        label = r["label"]
+        year = r["year"]
+        ddl_utc = r["deadline_utc"]
+        days_numeric = r["days_left"] if isinstance(r["days_left"], int) else ""
+
+        ddl_iso = (
+            ddl_utc.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+            if ddl_utc
+            else ""
         )
 
-        # description + ranks
+        # <tr> 上写 data-*，供 JS 排序/筛选使用
+        tr_open = (
+            f'<tr style="{style}" '
+            f'data-status="{status}" '
+            f'data-label="{label}" '
+            f'data-year="{year}" '
+            f'data-deadline-utc="{ddl_iso}" '
+            f'data-days="{days_numeric}">'
+        )
+        lines.append("    " + tr_open)
+
+        # Conference 列
+        conf_html = (
+            f'<strong><a href="{r["link"]}" target="_blank" '
+            f'rel="noopener noreferrer">{label} {year}</a></strong>'
+        )
         meta_parts = []
         if r["description"]:
             meta_parts.append(r["description"])
@@ -431,18 +411,17 @@ def generate_html(rows: List[Dict[str, Any]], now_utc: dt.datetime) -> str:
             ranks_txt.append(f"TH-CPL {r['thcpl_rank']}")
         if ranks_txt:
             meta_parts.append(" / ".join(ranks_txt))
-
         if meta_parts:
             conf_html += "<br><small>" + " | ".join(meta_parts) + "</small>"
 
-        # deadline + comment + timezone
+        # Deadline 列
         ddl_cell = r["deadline_str"]
         if r["deadline_comment"]:
             ddl_cell += f'<br><small>{r["deadline_comment"]}</small>'
         if r["timezone"]:
             ddl_cell += f'<br><small>Timezone: {r["timezone"]}</small>'
 
-        # date & place
+        # Date & Place
         date_place = ""
         if r["date_str"]:
             date_place += r["date_str"]
@@ -451,29 +430,90 @@ def generate_html(rows: List[Dict[str, Any]], now_utc: dt.datetime) -> str:
                 date_place += "<br>"
             date_place += r["place"]
 
-        lines.append(
-            f'    <tr style="{style}">'
-            f"<td>{conf_html}</td>"
-            f"<td>{ddl_cell}</td>"
-            f"<td>{r['days_left_str']}</td>"
-            f"<td>{date_place}</td>"
-            f"<td>{r['status_label']}</td>"
-            "</tr>"
-        )
+        lines.append(f"<td>{conf_html}</td>")
+        lines.append(f"<td>{ddl_cell}</td>")
+        lines.append(f"<td>{r['days_left_str']}</td>")
+        lines.append(f"<td>{date_place}</td>")
+        lines.append(f"<td>{r['status_label']}</td>")
+        lines.append("    </tr>")
 
     lines.append("  </tbody>")
     lines.append("</table>")
 
+    # 页脚（含更新时间和时区）
     updated = now_utc.strftime("%Y-%m-%d %H:%M UTC")
     lines.append(
         "<p><small>"
         f"Last updated: {updated}. "
-        "Deadlines are taken from "
+        "Data source: "
         '<a href="https://github.com/ccfddl/ccf-deadlines" target="_blank" '
         'rel="noopener noreferrer">ccfddl</a>. '
         "All countdowns are computed in UTC."
         "</small></p>"
     )
+
+    # ---- 前端排序 & 筛选 JS ----
+    lines.append("<script>")
+    lines.append("(function(){")
+    lines.append('  var table = document.getElementById("ccf-deadlines-table");')
+    lines.append("  if (!table) return;")
+    lines.append("  var tbody = table.tBodies[0];")
+    lines.append("  var headers = table.querySelectorAll('th[data-sort]');")
+    lines.append(
+        "  function compareRows(a,b,type,asc){"
+        "    var da=a.dataset, db=b.dataset, cmp=0;"
+        "    if(type==='conf'){"
+        "      cmp = da.label.localeCompare(db.label);"
+        "    }else if(type==='deadline'){"
+        "      cmp = (da.deadlineUtc||'').localeCompare(db.deadlineUtc||'');"
+        "    }else if(type==='days'){"
+        "      var va=parseInt(da.days||'999999',10), vb=parseInt(db.days||'999999',10);"
+        "      cmp = va - vb;"
+        "    }else if(type==='status'){"
+        "      var order={open:0,on_the_way:1,finished:2};"
+        "      cmp = (order[da.status]||3) - (order[db.status]||3);"
+        "    }else{"
+        "      cmp = a.innerText.localeCompare(b.innerText);"
+        "    }"
+        "    return asc?cmp:-cmp;"
+        "  }"
+    )
+    lines.append(
+        "  headers.forEach(function(th,idx){"
+        "    th.style.cursor='pointer';"
+        "    th.title='Click to sort';"
+        "    th.addEventListener('click',function(){"
+        "      var type=th.getAttribute('data-sort');"
+        "      var asc=th.getAttribute('data-asc')!=='true';"
+        "      th.setAttribute('data-asc',asc?'true':'false');"
+        "      var rows=Array.prototype.slice.call(tbody.querySelectorAll('tr'));"
+        "      rows.sort(function(a,b){return compareRows(a,b,type,asc);});"
+        "      rows.forEach(function(r){tbody.appendChild(r);});"
+        "    });"
+        "  });"
+    )
+    # 筛选：status + 文本搜索
+    lines.append(
+        "  var statusSel=document.getElementById('ccf-status-filter');"
+        "  var searchInput=document.getElementById('ccf-search');"
+        "  function applyFilters(){"
+        "    var st=statusSel.value;"
+        "    var q=(searchInput.value||'').toLowerCase();"
+        "    var rows=tbody.querySelectorAll('tr');"
+        "    rows.forEach(function(r){"
+        "      var ok=true;"
+        "      if(st!=='all' && r.dataset.status!==st) ok=false;"
+        "      if(q && r.innerText.toLowerCase().indexOf(q)===-1) ok=false;"
+        "      r.style.display=ok?'':'none';"
+        "    });"
+        "  }"
+    )
+    lines.append(
+        "  if(statusSel){statusSel.addEventListener('change',applyFilters);}"
+        "  if(searchInput){searchInput.addEventListener('input',applyFilters);}"
+        "})();"
+    )
+    lines.append("</script>")
 
     return "\n".join(lines) + "\n"
 
@@ -495,7 +535,7 @@ def main():
         for entry in data:
             all_candidates.extend(build_year_candidates(entry, now_utc))
 
-        best = choose_best_candidate(all_candidates)
+        best = choose_latest_candidate(all_candidates)
         if not best:
             print(f"[WARN] No valid confs for {conf_def['name']}")
             continue
@@ -513,6 +553,7 @@ def main():
             "deadline_comment": best["deadline_comment"],
             "timezone": best["timezone"],
             "deadline_utc": best["deadline_utc"],
+            "days_left": best["days_left"],
             "days_left_str": days_left_str,
             "date_str": best["date_str"],
             "place": best["place"],
@@ -523,7 +564,6 @@ def main():
             "row_style": row_style,
             "status_label": status_label,
         }
-
         rows.append(row)
 
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
