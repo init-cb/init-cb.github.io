@@ -30,8 +30,13 @@ I have published some papers about these topics with total <a href='https://scho
 
 # 📝 Publications 
 ### <sup>†</sup> means co-first author, **bold** highlight myself.
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv preprint</div><img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/9b54a466-cdfe-4457-b91e-e56b125cf70d" />
-</div></div>
+<div class='paper-box'
+  <div class='paper-box-image'>
+    <div>
+      <div class="badge">arXiv preprint</div>
+      <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/9b54a466-cdfe-4457-b91e-e56b125cf70d" />
+    </div>
+  </div>
 <div class='paper-box-text' markdown="1">
 
 [Enriched text-guided variational multimodal knowledge distillation network (VMD) for automated diagnosis of plaque vulnerability in 3D carotid artery MRI.](https://arxiv.org/abs/2509.11924)
@@ -61,4 +66,6 @@ I have published some papers about these topics with total <a href='https://scho
 
 
 # 🕺Tracks
-<script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=VF6O719bynbNiIaQTdNJx3NJZY40ngAXbWC5Rk0_cu0"></script>
+<div width="500" height="300" >
+  <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=VF6O719bynbNiIaQTdNJx3NJZY40ngAXbWC5Rk0_cu0"></script>
+</div>
