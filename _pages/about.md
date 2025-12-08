@@ -58,7 +58,7 @@ I have published some papers about these topics with total <a href='https://scho
 
 # 💻 Internships
 - *2025.06 - 2025.09*, **LLM Algorithm Engineer** [TowardPi (Beijing) Medical Technology Ltd.](https://en.towardpi.com/), Beijing, China.
-- *2023.09 - 2024.03*, **Algorithm Engineer** [Beijing United lmaging Intelligent Imaging Technology Research Institute](https://global.united-imaging.com/en/), Beijing, China.
+- *2023.09 - 2024.03*, **Algorithm Engineer** [Beijing United-Imaging Research Institute of Intelligent Imaging](https://global.united-imaging.com/en/), Beijing, China.
 
 
 # 🥇 Honors and Awards
@@ -66,8 +66,6 @@ I have published some papers about these topics with total <a href='https://scho
 
 
 # 🕺 Tracks
-{% include ccf_deadlines.html %}
-
 <div  width="500" height="300">
  <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=n&d=VF6O719bynbNiIaQTdNJx3NJZY40ngAXbWC5Rk0_cu0&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
 </div>
