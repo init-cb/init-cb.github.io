@@ -39,6 +39,10 @@ TARGET_CONFS = [
     {"sub": "MX", "name": "isbi",   "label": "ISBI"},
     {"sub": "AI", "name": "icaps",   "label": "ICAPS"},
     {"sub": "CG", "name": "icassp",   "label": "ICASSP"},
+    {"sub": "DB", "name": "sigir",   "label": "SIGIR"},
+    {"sub": "DB", "name": "sigkdd",   "label": "SIGKDD"},
+    {"sub": "AI", "name": "acl",   "label": "ACL"},
+   {"sub": "CG", "name": "mm",   "label": "ACM MM"},
 ]
 
 RAW_BASE = "https://raw.githubusercontent.com/ccfddl/ccf-deadlines/main"
