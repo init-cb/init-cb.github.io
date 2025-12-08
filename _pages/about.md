@@ -47,8 +47,8 @@ I have published some papers about these topics with total <a href='https://scho
 </div>
 </div>
 
-- [Variational multimodal distillation for diagnosing plaque vulnerability in carotid 3D MRI.](https://adsmi-miccai.github.io/) **B Cao**, F Yu, M Feng, Z Qian, J Lu. Workshop of **MICCAI 2024**.
-- [Development and validation of MRI-based deep learning radiomics signatures to predict high-risk plaques in patients with carotid atherosclerosis.] Q Gai<sup>†</sup>, J Zhou<sup>†</sup>, Y Zhang<sup>†</sup>, **B Cao**, F Yu, M Feng, J Lu. **AJNR** accepted.
+- ''MICCAI 2024''[Variational multimodal distillation for diagnosing plaque vulnerability in carotid 3D MRI.](https://adsmi-miccai.github.io/) **B Cao**, F Yu, M Feng, Z Qian, J Lu. Workshop of **MICCAI 2024**.
+- ''AJNR''[Development and validation of MRI-based deep learning radiomics signatures to predict high-risk plaques in patients with carotid atherosclerosis.] Q Gai<sup>†</sup>, J Zhou<sup>†</sup>, Y Zhang<sup>†</sup>, **B Cao**, F Yu, M Feng, J Lu. **American Journal of Neuroradiology**. accepted.
 
 # 📖 Educations
 - *2025.09 - now*,     **Ph.D.**,    Biomedical Engineering,   Fuwai Hospital, **Peking Union Medical College (Chinese Academy of Medical Sciences)**, China.
