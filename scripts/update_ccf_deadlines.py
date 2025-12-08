@@ -24,7 +24,7 @@ import yaml
 
 TARGET_CONFS = [
 {"sub": "AI", "name": "aaai",   "label": "AAAI"},
-    {"sub": "AI", "name": "nips",   "label": "NeuIPS"},
+    {"sub": "AI", "name": "nips",   "label": "NeurIPS"},
     {"sub": "AI", "name": "cvpr",   "label": "CVPR"},
     {"sub": "AI", "name": "emnlp",   "label": "EMNLP"},
     {"sub": "AI", "name": "iccv",   "label": "ICCV"},
@@ -32,6 +32,8 @@ TARGET_CONFS = [
     {"sub": "AI", "name": "ijcai",   "label": "IJCAI"},
     {"sub": "MX", "name": "www",    "label": "WWW"},
     {"sub": "AI", "name": "bmvc",   "label": "BMVC"},
+    {"sub": "AI", "name": "icml",   "label": "ICML"},
+    {"sub": "AI", "name": "iclr",   "label": "ICLR"},
     {"sub": "MX", "name": "miccai", "label": "MICCAI"},
     {"sub": "MX", "name": "bibm", "label": "BIBM"},
     {"sub": "MX", "name": "isbi",   "label": "ISBI"},
