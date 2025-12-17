@@ -26,8 +26,10 @@ Previously, I obtained my master’s degree in Biomedical Engineering from the F
 I have published some papers about these topics with total <a href='https://scholar.google.com/citations?user=dolRmMkAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
 
 # 🔥 News
-- *2025.06*: &nbsp;🎉I have joined TowardPi (Beijing) Medical Technology Ltd. as an intern of LLM Algorithm Engineer.  
-
+- *2025.12*: &nbsp; I have been invited as an emergency reviewer of ISBI 2026.
+- *2025.09*: &nbsp; 🎉🎉🎉I enrolled in the Peking Union Medical College Fuwai Hospital as a BME Ph.D. student in the department of Magnetic Resonance Imaging.
+- *2025.06*: &nbsp; 🎉I have joined TowardPi (Beijing) Medical Technology Ltd. as an intern of LLM Algorithm Engineer.  
+  
 # 📝 Publications 
 ### <sup>†</sup> means co-first author, **bold** highlight myself.
 <div class='paper-box'>
