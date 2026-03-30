@@ -51,6 +51,7 @@ I have published some papers about these topics with total <a href='https://scho
 
 - [Variational multimodal distillation for diagnosing plaque vulnerability in carotid 3D MRI.](https://adsmi-miccai.github.io/) **B Cao**, F Yu, M Feng, Z Qian, J Lu. Workshop of **MICCAI 2024**.
 - [Development and validation of MRI-based deep learning radiomics signatures to predict high-risk plaques in patients with carotid atherosclerosis.] Q Gai<sup>†</sup>, J Zhou<sup>†</sup>, Y Zhang<sup>†</sup>, **B Cao**, F Yu, M Feng, J Lu. **American Journal of Neuroradiology**. accepted.
+- [Hierarchical Cross-Modal Fusion with Modality-Specific Training Paradigms for High-Precision Non-Invasive Aging Assessment] Yihang Wu, Junnan Xu, Guocong li, Shuaihan Huang, **Bo Cao**, Yiwen Zhang
 
 # 📖 Educations
 - *2025.09 - now*,     **Ph.D.**,    Biomedical Engineering,   Fuwai Hospital, **Peking Union Medical College (Chinese Academy of Medical Sciences)**, China.
@@ -59,6 +60,7 @@ I have published some papers about these topics with total <a href='https://scho
 
 
 # 💻 Internships
+- *2025.12 - now*, **Algorithm Engineer** [Keya Medical](https://www.keyamedical.com/), Beijing, China
 - *2025.06 - 2025.09*, **LLM Algorithm Engineer** [TowardPi (Beijing) Medical Technology Ltd.](https://en.towardpi.com/), Beijing, China.
 - *2023.09 - 2024.03*, **Algorithm Engineer** [Beijing United-Imaging Research Institute of Intelligent Imaging](https://global.united-imaging.com/en/), Beijing, China.
 
