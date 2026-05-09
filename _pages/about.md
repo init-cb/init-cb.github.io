@@ -37,7 +37,7 @@ I have published some papers about these topics with total <a href='https://scho
   <div class='paper-box-image'>
     <div>
       <div class="badge">RSNA 2026</div>
-      <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/9b54a466-cdfe-4457-b91e-e56b125cf70d" />
+      <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/3713e61e-cce9-45ec-a60b-58c346c36fa9" />
     </div>
   </div>
 <div class='paper-box-text' markdown="1">
