@@ -45,6 +45,7 @@ I have published some papers about these topics with total <a href='https://scho
 - This study explores whether agentic-tool-calling of LLMs can enhance the ability of writing CMR reports in VLM report generation. 
 </div>
 </div>
+
 <div class='paper-box'>
 <div class='paper-box-image'>
   <div class="badge">MICCAI 2026</div> 
@@ -73,14 +74,14 @@ I have published some papers about these topics with total <a href='https://scho
 <div class='paper-box'>
   <div class='paper-box-image'>
     <div>
-      <div class="badge">arXiv preprint</div>
+      <div class="badge">American Journal of Neuroradiology</div>
       <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/43f7067c-04af-455f-9994-2b7546a8e740" />
     </div>
   </div>
 <div class='paper-box-text' markdown="1">
 
 - [Deep Learning Radiomics Signature from Multicontrast MRI for Automated Identification of Symptomatic Carotid Plaques: A Multicenter Study.](https://www.ajnr.org/content/47/5/1212)
-- Q Gai<sup>†</sup>, J Zhou<sup>†</sup>, Y Zhang<sup>†</sup>, **B Cao**, F Yu, M Feng, J Lu. **American Journal of Neuroradiology**. accepted.
+- Q Gai<sup>†</sup>, J Zhou<sup>†</sup>, Y Zhang<sup>†</sup>, **B Cao**, F Yu, M Feng, J Lu.
 
 </div>
 </div>
