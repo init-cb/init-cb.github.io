@@ -41,13 +41,14 @@ I have published some papers about these topics with total <a href='https://scho
     </div>
   </div>
 <div class='paper-box-text' markdown="1">
-
 [Agentic Tool-Augmented Foundation Model for Quantitatively Grounded Cardiac MRI Report Generation] **Bo Cao** Yining Wang, Tingting Zheng, Jing Xu, Di Zhou, Minjie Lu.
 - This study explores whether agentic-tool-calling of LLMs can enhance the ability of writing CMR reports in VLM report generation. 
 </div>
 </div>
 
-- [Hierarchical Cross-Modal Fusion with Modality-Specific Training Paradigms for High-Precision Non-Invasive Aging Assessment] Yihang Wu, Junnan Xu, Guocong li, Shuaihan Huang, **Bo Cao**, Yiwen Zhang. **MICCAI 2026**
+<div class="badge">MICCAI 2026</div> 
+
+- [Hierarchical Cross-Modal Fusion with Modality-Specific Training Paradigms for High-Precision Non-Invasive Aging Assessment] Yihang Wu, Junnan Xu, Guocong li, Shuaihan Huang, **Bo Cao**, Yiwen Zhang. 
 
 <div class='paper-box'>
   <div class='paper-box-image'>
