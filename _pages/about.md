@@ -37,7 +37,7 @@ I have published some papers about these topics with total <a href='https://scho
   <div class='paper-box-image'>
     <div>
       <div class="badge">RSNA 2026</div>
-      <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/3713e61e-cce9-45ec-a60b-58c346c36fa9" />
+      <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/3713e61e-cce9-45ec-a60b-58c346c36fa9" />
     </div>
   </div>
 <div class='paper-box-text' markdown="1">
@@ -45,16 +45,18 @@ I have published some papers about these topics with total <a href='https://scho
 - This study explores whether agentic-tool-calling of LLMs can enhance the ability of writing CMR reports in VLM report generation. 
 </div>
 </div>
-
-<div class="badge">MICCAI 2026</div> 
-
+<div class='paper-box'>
+<div class='paper-box-image'>
+  <div class="badge">MICCAI 2026</div> 
+</div>
 - [Hierarchical Cross-Modal Fusion with Modality-Specific Training Paradigms for High-Precision Non-Invasive Aging Assessment] Yihang Wu, Junnan Xu, Guocong li, Shuaihan Huang, **Bo Cao**, Yiwen Zhang. 
+</div>
 
 <div class='paper-box'>
   <div class='paper-box-image'>
     <div>
       <div class="badge">arXiv preprint</div>
-      <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/9b54a466-cdfe-4457-b91e-e56b125cf70d" />
+      <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/9b54a466-cdfe-4457-b91e-e56b125cf70d" />
     </div>
   </div>
 <div class='paper-box-text' markdown="1">
@@ -67,7 +69,23 @@ I have published some papers about these topics with total <a href='https://scho
 </div>
 </div>
 
-- [Deep Learning Radiomics Signature from Multicontrast MRI for Automated Identification of Symptomatic Carotid Plaques: A Multicenter Study.](https://www.ajnr.org/content/47/5/1212) Q Gai<sup>†</sup>, J Zhou<sup>†</sup>, Y Zhang<sup>†</sup>, **B Cao**, F Yu, M Feng, J Lu. **American Journal of Neuroradiology**. accepted.
+
+<div class='paper-box'>
+  <div class='paper-box-image'>
+    <div>
+      <div class="badge">arXiv preprint</div>
+      <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/43f7067c-04af-455f-9994-2b7546a8e740" />
+    </div>
+  </div>
+<div class='paper-box-text' markdown="1">
+
+- [Deep Learning Radiomics Signature from Multicontrast MRI for Automated Identification of Symptomatic Carotid Plaques: A Multicenter Study.](https://www.ajnr.org/content/47/5/1212)
+- Q Gai<sup>†</sup>, J Zhou<sup>†</sup>, Y Zhang<sup>†</sup>, **B Cao**, F Yu, M Feng, J Lu. **American Journal of Neuroradiology**. accepted.
+
+</div>
+</div>
+
+
 
 - [Variational multimodal distillation for diagnosing plaque vulnerability in carotid 3D MRI.](https://adsmi-miccai.github.io/) **B Cao**, F Yu, M Feng, Z Qian, J Lu. Workshop of **MICCAI 2024**.
 
