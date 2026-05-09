@@ -50,8 +50,9 @@ I have published some papers about these topics with total <a href='https://scho
 <div class='paper-box-image'>
   <div class="badge">MICCAI 2026</div> 
 </div>
-- [Hierarchical Cross-Modal Fusion with Modality-Specific Training Paradigms for High-Precision Non-Invasive Aging Assessment] Yihang Wu, Junnan Xu, Guocong li, Shuaihan Huang, **Bo Cao**, Yiwen Zhang. 
 </div>
+- [Hierarchical Cross-Modal Fusion with Modality-Specific Training Paradigms for High-Precision Non-Invasive Aging Assessment] Yihang Wu, Junnan Xu, Guocong li, Shuaihan Huang, **Bo Cao**, Yiwen Zhang. 
+
 
 <div class='paper-box'>
   <div class='paper-box-image'>
