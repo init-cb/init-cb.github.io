@@ -41,7 +41,8 @@ I have published some papers about these topics with total <a href='https://scho
     </div>
   </div>
 <div class='paper-box-text' markdown="1">
-[Agentic Tool-Augmented Foundation Model for Quantitatively Grounded Cardiac MRI Report Generation] **Bo Cao** Yining Wang, Tingting Zheng, Jing Xu, Di Zhou, Minjie Lu.
+Agentic Tool-Augmented Foundation Model for Quantitatively Grounded Cardiac MRI Report Generation
+**Bo Cao** Yining Wang, Tingting Zheng, Jing Xu, Di Zhou, Minjie Lu.
 - This study explores whether agentic-tool-calling of LLMs can enhance the ability of writing CMR reports in VLM report generation. 
 </div>
 </div>
@@ -51,7 +52,8 @@ I have published some papers about these topics with total <a href='https://scho
   <div class="badge">MICCAI 2026</div> 
 </div>
 </div>
-- [Hierarchical Cross-Modal Fusion with Modality-Specific Training Paradigms for High-Precision Non-Invasive Aging Assessment] Yihang Wu, Junnan Xu, Guocong li, Shuaihan Huang, **Bo Cao**, Yiwen Zhang. 
+- Hierarchical Cross-Modal Fusion with Modality-Specific Training Paradigms for High-Precision Non-Invasive Aging Assessment
+Yihang Wu, Junnan Xu, Guocong li, Shuaihan Huang, **Bo Cao**, Yiwen Zhang. 
 
 
 <div class='paper-box'>
@@ -81,15 +83,19 @@ I have published some papers about these topics with total <a href='https://scho
   </div>
 <div class='paper-box-text' markdown="1">
 
-- [Deep Learning Radiomics Signature from Multicontrast MRI for Automated Identification of Symptomatic Carotid Plaques: A Multicenter Study.](https://www.ajnr.org/content/47/5/1212)
-- Q Gai<sup>†</sup>, J Zhou<sup>†</sup>, Y Zhang<sup>†</sup>, **B Cao**, F Yu, M Feng, J Lu.
+[Deep Learning Radiomics Signature from Multicontrast MRI for Automated Identification of Symptomatic Carotid Plaques: A Multicenter Study.](https://www.ajnr.org/content/47/5/1212)
+Q Gai<sup>†</sup>, J Zhou<sup>†</sup>, Y Zhang<sup>†</sup>, **B Cao**, F Yu, M Feng, J Lu.
 
 </div>
 </div>
 
 
-
-- [Variational multimodal distillation for diagnosing plaque vulnerability in carotid 3D MRI.](https://adsmi-miccai.github.io/) **B Cao**, F Yu, M Feng, Z Qian, J Lu. Workshop of **MICCAI 2024**.
+<div class='paper-box'>
+<div class='paper-box-image'>
+  <div class="badge">Workshop of MICCAI 2024</div> 
+</div>
+</div>
+- [Variational multimodal distillation for diagnosing plaque vulnerability in carotid 3D MRI.](https://adsmi-miccai.github.io/) **B Cao**, F Yu, M Feng, Z Qian, J Lu.
 
 
 # 📖 Educations
