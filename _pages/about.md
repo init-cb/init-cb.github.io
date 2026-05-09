@@ -26,12 +26,29 @@ Previously, I obtained my master’s degree in Biomedical Engineering from the F
 I have published some papers about these topics with total <a href='https://scholar.google.com/citations?user=dolRmMkAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
 
 # 🔥 News
+- *2026.1*: &nbsp; I have joined Keya Medical as en ontern of Algorithm Engineer.
 - *2025.12*: &nbsp; I have been invited as an emergency reviewer of ISBI 2026.
 - *2025.09*: &nbsp; 🎉🎉🎉I enrolled in the Peking Union Medical College Fuwai Hospital as a BME Ph.D. student in the department of Magnetic Resonance Imaging.
 - *2025.06*: &nbsp; 🎉I have joined TowardPi (Beijing) Medical Technology Ltd. as an intern of LLM Algorithm Engineer.  
   
 # 📝 Publications 
 ### <sup>†</sup> means co-first author, **bold** highlight myself.
+<div class='paper-box'>
+  <div class='paper-box-image'>
+    <div>
+      <div class="badge">RSNA 2026</div>
+      <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/9b54a466-cdfe-4457-b91e-e56b125cf70d" />
+    </div>
+  </div>
+<div class='paper-box-text' markdown="1">
+
+[Agentic Tool-Augmented Foundation Model for Quantitatively Grounded Cardiac MRI Report Generation] **Bo Cao** Yining Wang, Tingting Zheng, Jing Xu, Di Zhou, Minjie Lu.
+- This study explores whether agentic-tool-calling of LLMs can enhance the ability of writing CMR reports in VLM report generation. 
+</div>
+</div>
+
+- [Hierarchical Cross-Modal Fusion with Modality-Specific Training Paradigms for High-Precision Non-Invasive Aging Assessment] Yihang Wu, Junnan Xu, Guocong li, Shuaihan Huang, **Bo Cao**, Yiwen Zhang. **MICCAI 2026**
+
 <div class='paper-box'>
   <div class='paper-box-image'>
     <div>
@@ -49,9 +66,10 @@ I have published some papers about these topics with total <a href='https://scho
 </div>
 </div>
 
+- [Deep Learning Radiomics Signature from Multicontrast MRI for Automated Identification of Symptomatic Carotid Plaques: A Multicenter Study.](https://www.ajnr.org/content/47/5/1212) Q Gai<sup>†</sup>, J Zhou<sup>†</sup>, Y Zhang<sup>†</sup>, **B Cao**, F Yu, M Feng, J Lu. **American Journal of Neuroradiology**. accepted.
+
 - [Variational multimodal distillation for diagnosing plaque vulnerability in carotid 3D MRI.](https://adsmi-miccai.github.io/) **B Cao**, F Yu, M Feng, Z Qian, J Lu. Workshop of **MICCAI 2024**.
-- [Development and validation of MRI-based deep learning radiomics signatures to predict high-risk plaques in patients with carotid atherosclerosis.] Q Gai<sup>†</sup>, J Zhou<sup>†</sup>, Y Zhang<sup>†</sup>, **B Cao**, F Yu, M Feng, J Lu. **American Journal of Neuroradiology**. accepted.
-- [Hierarchical Cross-Modal Fusion with Modality-Specific Training Paradigms for High-Precision Non-Invasive Aging Assessment] Yihang Wu, Junnan Xu, Guocong li, Shuaihan Huang, **Bo Cao**, Yiwen Zhang
+
 
 # 📖 Educations
 - *2025.09 - now*,     **Ph.D.**,    Biomedical Engineering,   Fuwai Hospital, **Peking Union Medical College (Chinese Academy of Medical Sciences)**, China.
