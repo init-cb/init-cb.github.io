@@ -19,14 +19,14 @@ redirect_from:
 
 I am currently a Ph.D. student in Biomedical Engineering at Fuwai Hospital, Peking Union Medical College (Chinese Academy of Medical Sciences), under the supervision of Prof. Minjie Lu.
 
-My research interests focus on computer vision, vision-language alignment, Multimodal Large Language Model, and magnetic resonance imaging(MRI) artificial intelligence applications. And my current project focuses on visual language alignment in **cardiac MRI** and **clinical report**, including **visual question answering** and **MRI report generation**.
+My research interests focus on computer vision, vision-language alignment, multimodal large language models, and magnetic resonance imaging artificial intelligence applications. And my current project focuses on visual language alignment in **cardiac MRI** and **clinical report**, including **visual question answering** and **MRI report generation**.
 
 Previously, I obtained my master’s degree in Biomedical Engineering from the First Clinical Medical College(Xuanwu Hospital), Capital Medical University, supervised by Prof. Jie Lu. I did some research about **atherosclerosis** in the **carotid MRI** and brain during this stage.
 
 I have published some papers about these topics with total <a href='https://scholar.google.com/citations?user=dolRmMkAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
 
 # 🔥 News
-- *2026.1*: &nbsp; I have joined Keya Medical as en ontern of Algorithm Engineer.
+- *2026.1*: &nbsp; I have joined Keya Medical as an intern of Algorithm Engineer.
 - *2025.12*: &nbsp; I have been invited as an emergency reviewer of ISBI 2026.
 - *2025.09*: &nbsp; 🎉🎉🎉I enrolled in the Peking Union Medical College Fuwai Hospital as a BME Ph.D. student in the department of Magnetic Resonance Imaging.
 - *2025.06*: &nbsp; 🎉I have joined TowardPi (Beijing) Medical Technology Ltd. as an intern of LLM Algorithm Engineer.  
@@ -50,6 +50,7 @@ Agentic Tool-Augmented Foundation Model for Quantitatively Grounded Cardiac MRI 
 <div class='paper-box'>
 <div class='paper-box-image'>
   <div class="badge">MICCAI 2026</div> 
+  <img width="400" height="200" alt="70dccbfc-e65a-4615-b4e7-9c54835b1e20" src="https://github.com/user-attachments/assets/62e676d1-799c-4e3f-9545-18db2d45809c" />
 </div>
 </div>
 - Hierarchical Cross-Modal Fusion with Modality-Specific Training Paradigms for High-Precision Non-Invasive Aging Assessment
@@ -116,6 +117,6 @@ Q Gai<sup>†</sup>, J Zhou<sup>†</sup>, Y Zhang<sup>†</sup>, **B Cao**, F Y
 
 # 🕺 Tracks
 {% include ccf_deadlines.html %}
-<div  width="500" height="300">
+<div  width="400" height="300">
  <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=n&d=VF6O719bynbNiIaQTdNJx3NJZY40ngAXbWC5Rk0_cu0&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
 </div>
