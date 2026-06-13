@@ -26,7 +26,8 @@ Previously, I obtained my master’s degree in Biomedical Engineering from the F
 I have published some papers about these topics with total <a href='https://scholar.google.com/citations?user=dolRmMkAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
 
 # 🔥 News
-- *2026.1*: &nbsp; I have joined Keya Medical as an intern of Algorithm Engineer.
+- *2026.06*: &nbsp; Our paper have been acccepted by MICCAI 2026.
+- *2026.1*: &nbsp; I have joined Keya Medical as an intern in Algorithm Engineering.
 - *2025.12*: &nbsp; I have been invited as an emergency reviewer of ISBI 2026.
 - *2025.09*: &nbsp; 🎉🎉🎉I enrolled in the Peking Union Medical College Fuwai Hospital as a BME Ph.D. student in the department of Magnetic Resonance Imaging.
 - *2025.06*: &nbsp; 🎉I have joined TowardPi (Beijing) Medical Technology Ltd. as an intern of LLM Algorithm Engineer.  
@@ -52,11 +53,11 @@ Agentic Tool-Augmented Foundation Model for Quantitatively Grounded Cardiac MRI 
   <div class="badge">MICCAI 2026</div> 
   <img width="400" height="200" alt="70dccbfc-e65a-4615-b4e7-9c54835b1e20" src="https://github.com/user-attachments/assets/62e676d1-799c-4e3f-9545-18db2d45809c" />
 </div>
-</div>
+<div class='paper-box-text' markdown="1">
 - Hierarchical Cross-Modal Fusion with Modality-Specific Training Paradigms for High-Precision Non-Invasive Aging Assessment
 Yihang Wu, Junnan Xu, Guocong li, Shuaihan Huang, **Bo Cao**, Yiwen Zhang. 
-
-
+</div>
+</div>
 <div class='paper-box'>
   <div class='paper-box-image'>
     <div>
