@@ -87,14 +87,15 @@
 
 }
 
-$scroll_offset : 2em;
-h1:before, .anchor:before { 
-    content: ''; 
-    display: block; 
-    position: relative; 
-    width: 0; 
-    height: $scroll_offset; 
-    margin-top: -$scroll_offset;
+$scroll_offset : 5rem;
+h1,
+.anchor {
+    scroll-margin-top: $scroll_offset;
+}
+
+h1:before,
+.anchor:before {
+    content: none;
 }
 
 .badge {
@@ -119,6 +120,12 @@ h1:before, .anchor:before {
     color: #202735;
     font-size: 1.35rem;
     line-height: 1.25;
+}
+
+.page__content #about-me {
+    display: block;
+    margin-top: 0;
+    scroll-margin-top: $scroll_offset;
 }
 
 .tracks-page {
