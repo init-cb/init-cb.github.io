@@ -115,9 +115,6 @@ Q Gai<sup>†</sup>, J Zhou<sup>†</sup>, Y Zhang<sup>†</sup>, **B Cao**, F Y
 # 🥇 Honors and Awards
 - 
 
-
-# 🕺 Tracks
-{% include ccf_deadlines.html %}
 <div  width="400" height="300">
  <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=n&d=VF6O719bynbNiIaQTdNJx3NJZY40ngAXbWC5Rk0_cu0&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
 </div>

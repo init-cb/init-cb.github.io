@@ -20,10 +20,10 @@ from typing import Any, Dict, List, Optional, Tuple
 import requests
 import yaml
 
-# ------------ 你关注的会议：按 ccfddl 仓库实际路径修改这里 ------------
+# ------------ 你关注的会议：优先从 _data/tracked_conferences.yml 读取 ------------
 
-TARGET_CONFS = [
-{"sub": "AI", "name": "aaai",   "label": "AAAI"},
+DEFAULT_TARGET_CONFS = [
+    {"sub": "AI", "name": "aaai",   "label": "AAAI"},
     {"sub": "AI", "name": "nips",   "label": "NeurIPS"},
     {"sub": "AI", "name": "cvpr",   "label": "CVPR"},
     {"sub": "AI", "name": "emnlp",   "label": "EMNLP"},
@@ -42,14 +42,35 @@ TARGET_CONFS = [
     {"sub": "DB", "name": "sigir",   "label": "SIGIR"},
     {"sub": "DB", "name": "sigkdd",   "label": "SIGKDD"},
     {"sub": "AI", "name": "acl",   "label": "ACL"},
-   {"sub": "CG", "name": "mm",   "label": "ACM MM"},
+    {"sub": "CG", "name": "mm",   "label": "ACM MM"},
 ]
 
 RAW_BASE = "https://raw.githubusercontent.com/ccfddl/ccf-deadlines/main"
+TRACKED_CONFS_FILE = Path("_data/tracked_conferences.yml")
 OUT_FILE = Path("_includes/ccf_deadlines.html")
 
 
 # ===================== 工具函数 =====================
+
+def load_target_confs() -> List[Dict[str, str]]:
+    if not TRACKED_CONFS_FILE.exists():
+        return DEFAULT_TARGET_CONFS
+
+    data = yaml.safe_load(TRACKED_CONFS_FILE.read_text(encoding="utf-8")) or []
+    target_confs: List[Dict[str, str]] = []
+    for item in data:
+        if not isinstance(item, dict):
+            continue
+        sub = item.get("sub")
+        name = item.get("name")
+        label = item.get("label")
+        if sub and name and label:
+            target_confs.append(
+                {"sub": str(sub), "name": str(name), "label": str(label)}
+            )
+
+    return target_confs or DEFAULT_TARGET_CONFS
+
 
 def fetch_conf_yaml(conf_def: Dict[str, str]) -> List[Dict[str, Any]]:
     url = f"{RAW_BASE}/conference/{conf_def['sub']}/{conf_def['name']}.yml"
@@ -536,7 +557,7 @@ def main():
     now_utc = dt.datetime.utcnow().replace(tzinfo=dt.timezone.utc)
     rows: List[Dict[str, Any]] = []
 
-    for conf_def in TARGET_CONFS:
+    for conf_def in load_target_confs():
         try:
             data = fetch_conf_yaml(conf_def)
         except Exception as e:
