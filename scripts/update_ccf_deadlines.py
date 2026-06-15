@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """
-从 ccfddl/ccf-deadlines 拉取指定会议的信息，生成 _includes/ccf_deadlines.html
+从 ccfddl/ccf-deadlines 拉取指定会议的信息，并合并手动维护的会议，
+生成 _includes/ccf_deadlines.html
 
 满足需求：
 1. 对于同一会议，只展示“最近的一届”（最大 year），无论是 open / on the way / finished。
 2. 截稿日期为 TBD 且会议日期尚未来临的会议，视为 open（绿色）。
-3. 表格支持前端排序和筛选：
+3. 对 ccfddl 中没有的会议，可在 _data/manual_conferences.yml 手动添加。
+4. 表格支持前端排序和筛选：
    - 列名：Conference / Deadline / Days / Date & Place / Status
    - 点击表头可排序（按字母、deadline 时间、days、status 等）。
    - 顶部有 status 下拉框和搜索框。
@@ -47,6 +49,7 @@ DEFAULT_TARGET_CONFS = [
 
 RAW_BASE = "https://raw.githubusercontent.com/ccfddl/ccf-deadlines/main"
 TRACKED_CONFS_FILE = Path("_data/tracked_conferences.yml")
+MANUAL_CONFS_FILE = Path("_data/manual_conferences.yml")
 OUT_FILE = Path("_includes/ccf_deadlines.html")
 
 
@@ -347,6 +350,90 @@ def status_style_and_label(overall_status: str) -> Tuple[str, str]:
     return 'background-color:#f2f2f2;color:#777;', "Finished"
 
 
+def normalize_status(status: str) -> str:
+    status = (status or "").strip().lower().replace("-", "_").replace(" ", "_")
+    if status in {"open", "on_the_way", "finished"}:
+        return status
+    return ""
+
+
+def infer_manual_status(
+    deadline_utc: Optional[dt.datetime],
+    deadline_str: str,
+    conf_end_date: Optional[dt.date],
+    now_utc: dt.datetime,
+) -> str:
+    today = now_utc.date()
+    if deadline_utc and deadline_utc >= now_utc:
+        return "open"
+    if (not deadline_utc or deadline_str == "TBD") and conf_end_date and conf_end_date >= today:
+        return "open"
+    if conf_end_date and conf_end_date >= today:
+        return "on_the_way"
+    return "finished"
+
+
+def build_manual_rows(now_utc: dt.datetime) -> List[Dict[str, Any]]:
+    if not MANUAL_CONFS_FILE.exists():
+        return []
+
+    data = yaml.safe_load(MANUAL_CONFS_FILE.read_text(encoding="utf-8")) or []
+    rows: List[Dict[str, Any]] = []
+    for item in data:
+        if not isinstance(item, dict):
+            continue
+
+        label = str(item.get("label") or "").strip()
+        year = item.get("year")
+        if not label or not isinstance(year, int):
+            print(f"[WARN] Skipping manual conference with missing label/year: {item}")
+            continue
+
+        timezone_str = str(item.get("timezone") or "")
+        deadline_str = str(item.get("deadline") or "TBD")
+        local_deadline = parse_deadline_local(deadline_str)
+        deadline_utc = to_utc(local_deadline, timezone_str) if local_deadline else None
+        days_left = (
+            (deadline_utc.date() - now_utc.date()).days if deadline_utc else None
+        )
+        date_str = str(item.get("date") or "")
+        place = str(item.get("place") or "")
+        conf_end_date = parse_conf_end_date(date_str, year)
+
+        overall_status = normalize_status(str(item.get("status") or ""))
+        if not overall_status:
+            overall_status = infer_manual_status(
+                deadline_utc, deadline_str, conf_end_date, now_utc
+            )
+
+        row_style, status_label = status_style_and_label(overall_status)
+        rows.append(
+            {
+                "label": label,
+                "title": label,
+                "description": str(item.get("description") or ""),
+                "year": year,
+                "link": str(item.get("link") or "#"),
+                "deadline_str": deadline_str,
+                "deadline_comment": str(item.get("deadline_comment") or ""),
+                "timezone": timezone_str,
+                "deadline_utc": deadline_utc,
+                "days_left": days_left,
+                "days_left_str": format_days_left(days_left),
+                "date_str": date_str,
+                "place": place,
+                "ccf_rank": item.get("ccf"),
+                "core_rank": item.get("core"),
+                "thcpl_rank": item.get("thcpl"),
+                "overall_status": overall_status,
+                "row_style": row_style,
+                "status_label": status_label,
+            }
+        )
+
+    return rows
+
+
 def generate_html(rows: List[Dict[str, Any]], now_utc: dt.datetime) -> str:
     """
     rows 每个元素包含：
@@ -598,6 +685,8 @@ def main():
             "status_label": status_label,
         }
         rows.append(row)
+
+    rows.extend(build_manual_rows(now_utc))
 
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     html = generate_html(rows, now_utc)

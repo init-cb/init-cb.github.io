@@ -1,4 +1,4 @@
-name: Update CCF Deadlines
+name: Update Conference Deadlines
 
 on:
   schedule:
@@ -7,6 +7,8 @@ on:
   push:
     paths:
       - ".github/workflows/ccf-deadlines.yml"
+      - "_data/manual_conferences.yml"
+      - "_data/tracked_conferences.yml"
       - "scripts/update_ccf_deadlines.py"
 
 jobs:
@@ -42,6 +44,6 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add _includes/ccf_deadlines.html
-            git commit -m "chore: update CCF deadlines"
+            git commit -m "chore: update conference deadlines"
             git push
           fi

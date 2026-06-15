@@ -1,6 +1,7 @@
-# Conferences tracked by scripts/update_ccf_deadlines.py.
+# Conferences tracked from ccfddl by scripts/update_ccf_deadlines.py.
 # Add or remove a block here, then run:
 #   python3 scripts/update_ccf_deadlines.py
+# For conferences not available in ccfddl, use _data/manual_conferences.yml.
 - sub: "AI"
   name: "aaai"
   label: "AAAI"

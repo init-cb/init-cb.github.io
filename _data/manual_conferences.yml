@@ -1,0 +1,19 @@
+# Manual conference deadlines that are not available in ccfddl.
+# Add/remove blocks here, then run:
+#   python3 scripts/update_ccf_deadlines.py
+#
+# Example:
+# - label: "RSNA"
+#   year: 2026
+#   link: "https://www.rsna.org/annual-meeting"
+#   description: "Radiological Society of North America Annual Meeting"
+#   deadline: "2026-05-01 23:59:59"
+#   timezone: "AoE"
+#   date: "Nov 29-Dec 3, 2026"
+#   place: "Chicago, Illinois, United States"
+#   ccf:
+#   core:
+#   thcpl:
+#
+# If a deadline is unknown, use:
+#   deadline: "TBD"
