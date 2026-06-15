@@ -17,3 +17,93 @@
 #
 # If a deadline is unknown, use:
 #   deadline: "TBD"
+- label: "RSNA"
+  year: 2026
+  link: "https://www.rsna.org/annual-meeting"
+  description: "Radiological Society of North America Annual Meeting"
+  deadline: "2026-05-01 23:59:59"
+  timezone: "AoE"
+  date: "Nov 29-Dec 3, 2026"
+  place: "Chicago, Illinois, United States"
+  ccf:
+  core:
+  thcpl:
+
+- label: "ESC"
+  year: 2026
+  link: "https://www.escardio.org/events/congresses/esc-congress/"
+  description: "European Society of Cardiology Congress"
+  deadline: "TBD"
+  deadline_comment: "Abstract submission date not yet listed on the ESC Congress page checked."
+  timezone: "AoE"
+  date: "Aug 28-31, 2026"
+  place: "Munich, Germany"
+  ccf:
+  core:
+  thcpl:
+
+- label: "ACC"
+  year: 2027
+  link: "https://accscientificsession.acc.org/"
+  description: "American College of Cardiology Annual Scientific Session, together with WCC"
+  deadline: "TBD"
+  deadline_comment: "ACC.27-WCC submission dates are not yet posted."
+  timezone: "AoE"
+  date: "Apr 10-12, 2027"
+  place: "Houston, Texas, United States"
+  ccf:
+  core:
+  thcpl:
+
+- label: "AHA"
+  year: 2026
+  link: "https://professional.heart.org/en/meetings/scientific-sessions"
+  description: "American Heart Association Scientific Sessions"
+  deadline: "2026-08-24 18:00:00"
+  deadline_comment: "Late-breaking abstract deadline; general abstracts closed Jun 8, 2026."
+  timezone: "UTC-5"
+  date: "Nov 6-9, 2026"
+  place: "Chicago, Illinois, United States"
+  ccf:
+  core:
+  thcpl:
+
+- label: "ASCI"
+  year: 2027
+  link: "https://www.asci-heart.org/"
+  description: "Asian Society of Cardiovascular Imaging Annual Congress"
+  deadline: "TBD"
+  deadline_comment: "Placeholder until ASCI publishes 2027 dates and submission deadline."
+  timezone: "AoE"
+  date: "TBD"
+  place: "TBD"
+  status: "open"
+  ccf:
+  core:
+  thcpl:
+
+- label: "ISMRM"
+  year: 2027
+  link: "https://www.ismrm.org/meetings-workshops/future-ismrm-meetings/"
+  description: "ISMRM & ISMRT Annual Meeting and Exhibition"
+  deadline: "2026-10-28 23:59:59"
+  deadline_comment: "Abstract submission deadline; official page lists the date without a time."
+  timezone: "AoE"
+  date: "May 8-13, 2027"
+  place: "Vancouver, British Columbia, Canada"
+  ccf:
+  core:
+  thcpl:
+
+- label: "ECR"
+  year: 2027
+  link: "https://www.myesr.org/congress/"
+  description: "European Congress of Radiology"
+  deadline: "2026-09-30 23:59:59"
+  deadline_comment: "General abstract submission deadline; late-breaking abstract submission closes Jan 11, 2027."
+  timezone: "AoE"
+  date: "Mar 3-7, 2027"
+  place: "Vienna, Austria"
+  ccf:
+  core:
+  thcpl:
