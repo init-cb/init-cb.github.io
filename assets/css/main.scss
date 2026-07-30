@@ -170,7 +170,16 @@ h1:before,
         line-height: 1.08;
     }
 }
-
+.home-portrait {
+    display: block;
+    width: 112px;
+    height: 136px;
+    margin: 0 0 2rem;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 2px;
+    filter: saturate(0.82);
+}
 .home-kicker {
     margin: 0 0 1.2rem !important;
     color: #202224;
