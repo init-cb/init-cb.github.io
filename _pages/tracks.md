@@ -2,6 +2,7 @@
 layout: default
 title: "Tracks"
 permalink: /tracks/
+author_profile: false
 redirect_from: 
   - /tracks.html
 ---

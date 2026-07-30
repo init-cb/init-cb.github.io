@@ -1,120 +1,207 @@
 ---
 permalink: /
 title: ""
+description: "Bo Cao is a Ph.D. student at Fuwai Hospital working on multimodal learning for cardiac MRI and clinical reporting."
 excerpt: ""
-author_profile: true
-redirect_from: 
+author_profile: false
+body_class: "home-page"
+redirect_from:
   - /about/
   - /about.html
 ---
 
-{% if site.google_scholar_stats_use_cdn %}
-{% assign gsDataBaseUrl = "https://cdn.jsdelivr.net/gh/" | append: site.repository | append: "@" %}
-{% else %}
-{% assign gsDataBaseUrl = "https://raw.githubusercontent.com/" | append: site.repository | append: "/" %}
-{% endif %}
-{% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
+<div class="home-shell">
+  <header class="home-hero" id="about">
+    <p class="home-kicker">Bo Cao <span>曹波</span></p>
+    <h1>Vision-language learning for cardiac MRI and clinical reporting.</h1>
 
-<span class='anchor' id='about-me'></span>
-
-I am currently a Ph.D. student in Biomedical Engineering at Fuwai Hospital, Peking Union Medical College (Chinese Academy of Medical Sciences), under the supervision of Prof. Minjie Lu.
-
-My research interests focus on computer vision, vision-language alignment, multimodal large language models, and magnetic resonance imaging artificial intelligence applications. And my current project focuses on visual language alignment in **cardiac MRI** and **clinical report**, including **visual question answering** and **MRI report generation**.
-
-Previously, I obtained my master’s degree in Biomedical Engineering from the First Clinical Medical College(Xuanwu Hospital), Capital Medical University, supervised by Prof. Jie Lu. I did some research about **atherosclerosis** in the **carotid MRI** and brain during this stage.
-
-I have published some papers about these topics with total <a href='https://scholar.google.com/citations?user=dolRmMkAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
-
-# 🔥 News
-- *2026.06*: &nbsp; Our paper have been acccepted by MICCAI 2026.
-- *2026.1*: &nbsp; I have joined Keya Medical as an intern in Algorithm Engineering.
-- *2025.12*: &nbsp; I have been invited as an emergency reviewer of ISBI 2026.
-- *2025.09*: &nbsp; 🎉🎉🎉I enrolled in the Peking Union Medical College Fuwai Hospital as a BME Ph.D. student in the department of Magnetic Resonance Imaging.
-- *2025.06*: &nbsp; 🎉I have joined TowardPi (Beijing) Medical Technology Ltd. as an intern of LLM Algorithm Engineer.  
-  
-# 📝 Publications 
-### <sup>†</sup> means co-first author, **bold** highlight myself.
-<div class='paper-box'>
-  <div class='paper-box-image'>
-    <div>
-      <div class="badge">RSNA 2026</div>
-      <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/3713e61e-cce9-45ec-a60b-58c346c36fa9" />
+    <div class="home-intro">
+      <p>
+        I am a Ph.D. student in Biomedical Engineering at Fuwai Hospital,
+        Peking Union Medical College and the Chinese Academy of Medical Sciences,
+        advised by Prof. Minjie Lu.
+      </p>
+      <p>
+        My research focuses on multimodal medical AI, particularly vision-language
+        alignment, visual question answering, and quantitatively grounded report
+        generation for cardiac MRI. Previously, I studied carotid MRI and
+        atherosclerosis at Xuanwu Hospital under the supervision of Prof. Jie Lu.
+      </p>
     </div>
-  </div>
-<div class='paper-box-text' markdown="1">
-Agentic Tool-Augmented Foundation Model for Quantitatively Grounded Cardiac MRI Report Generation
-**Bo Cao** Yining Wang, Tingting Zheng, Jing Xu, Di Zhou, Minjie Lu.
-- This study explores whether agentic-tool-calling of LLMs can enhance the ability of writing CMR reports in VLM report generation. 
-</div>
-</div>
 
-<div class='paper-box'>
-<div class='paper-box-image'>
-  <div class="badge">MICCAI 2026</div> 
-  <img width="400" height="200" alt="70dccbfc-e65a-4615-b4e7-9c54835b1e20" src="https://github.com/user-attachments/assets/62e676d1-799c-4e3f-9545-18db2d45809c" />
-</div>
-<div class='paper-box-text' markdown="1">
-- Hierarchical Cross-Modal Fusion with Modality-Specific Training Paradigms for High-Precision Non-Invasive Aging Assessment
-Yihang Wu, Junnan Xu, Guocong li, Shuaihan Huang, **Bo Cao**, Yiwen Zhang. 
-</div>
-</div>
-<div class='paper-box'>
-  <div class='paper-box-image'>
-    <div>
-      <div class="badge">arXiv preprint</div>
-      <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/9b54a466-cdfe-4457-b91e-e56b125cf70d" />
+    <nav class="profile-links" aria-label="Profile links">
+      <a href="mailto:init_cb@163.com">Email</a>
+      <a href="https://scholar.google.com/citations?user=dolRmMkAAAAJ">Google Scholar</a>
+      <a href="https://github.com/init-cb">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="home-section" id="news">
+    <div class="section-heading">
+      <h2>News</h2>
     </div>
-  </div>
-<div class='paper-box-text' markdown="1">
-
-[Enriched text-guided variational multimodal knowledge distillation network (VMD) for automated diagnosis of plaque vulnerability in 3D carotid artery MRI.](https://arxiv.org/abs/2509.11924)
-
-**B Cao**, F Yu, M Feng, SH Zhang, X Meng, Y Zhang, Z Qian, J Lu.
-
-- This study explores whether beneficial information from clinical reports can be transferred to visual diagnostic tasks through the image-text paired knowledge distillation. 
-</div>
-</div>
-
-
-<div class='paper-box'>
-  <div class='paper-box-image'>
-    <div>
-      <div class="badge">American Journal of Neuroradiology</div>
-      <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/43f7067c-04af-455f-9994-2b7546a8e740" />
+    <div class="news-list">
+      <div class="news-item">
+        <time datetime="2026-06">Jun 2026</time>
+        <p>Our work on non-invasive aging assessment was accepted to MICCAI 2026.</p>
+      </div>
+      <div class="news-item">
+        <time datetime="2026-01">Jan 2026</time>
+        <p>I joined Keya Medical as an Algorithm Engineering Intern.</p>
+      </div>
+      <div class="news-item">
+        <time datetime="2025-09">Sep 2025</time>
+        <p>I began my Ph.D. at Fuwai Hospital, Peking Union Medical College.</p>
+      </div>
+      <div class="news-item">
+        <time datetime="2025-06">Jun 2025</time>
+        <p>I joined TowardPi as an LLM Algorithm Engineering Intern.</p>
+      </div>
     </div>
-  </div>
-<div class='paper-box-text' markdown="1">
+  </section>
 
-[Deep Learning Radiomics Signature from Multicontrast MRI for Automated Identification of Symptomatic Carotid Plaques: A Multicenter Study.](https://www.ajnr.org/content/47/5/1212)
-Q Gai<sup>†</sup>, J Zhou<sup>†</sup>, Y Zhang<sup>†</sup>, **B Cao**, F Yu, M Feng, J Lu.
+  <section class="home-section" id="selected-work">
+    <div class="section-heading">
+      <h2>Selected work</h2>
+      <a href="https://scholar.google.com/citations?user=dolRmMkAAAAJ">All publications</a>
+    </div>
 
-</div>
-</div>
+    <article class="work-item work-item--featured">
+      <div class="work-item__media">
+        <img
+          src="https://github.com/user-attachments/assets/3713e61e-cce9-45ec-a60b-58c346c36fa9"
+          alt="Overview of the agentic cardiac MRI report generation framework"
+          loading="lazy"
+        >
+      </div>
+      <div class="work-item__content">
+        <p class="work-meta">RSNA 2026 · Report generation</p>
+        <h3>Agentic Tool-Augmented Foundation Model for Quantitatively Grounded Cardiac MRI Report Generation</h3>
+        <p class="work-authors"><strong>Bo Cao</strong>, Yining Wang, Tingting Zheng, Jing Xu, Di Zhou, Minjie Lu</p>
+        <p class="work-summary">
+          We study whether tool-augmented foundation models can produce cardiac MRI
+          reports that are both fluent and quantitatively grounded.
+        </p>
+      </div>
+    </article>
 
+    <article class="work-item work-item--featured">
+      <div class="work-item__media">
+        <img
+          src="https://github.com/user-attachments/assets/9b54a466-cdfe-4457-b91e-e56b125cf70d"
+          alt="Overview of multimodal knowledge distillation for carotid MRI"
+          loading="lazy"
+        >
+      </div>
+      <div class="work-item__content">
+        <p class="work-meta">arXiv · Multimodal distillation</p>
+        <h3>
+          <a href="https://arxiv.org/abs/2509.11924">
+            Enriched Text-Guided Variational Multimodal Knowledge Distillation for Plaque Vulnerability Assessment
+          </a>
+        </h3>
+        <p class="work-authors"><strong>Bo Cao</strong>, F. Yu, M. Feng, S. Zhang, X. Meng, Y. Zhang, Z. Qian, J. Lu</p>
+        <p class="work-summary">
+          Clinical reports provide privileged semantic guidance to an image-only
+          model for automated assessment of plaque vulnerability in 3D carotid MRI.
+        </p>
+      </div>
+    </article>
 
-<div class='paper-box'>
-<div class='paper-box-image'>
-  <div class="badge">Workshop of MICCAI 2024</div> 
-</div>
-</div>
-- [Variational multimodal distillation for diagnosing plaque vulnerability in carotid 3D MRI.](https://adsmi-miccai.github.io/) **B Cao**, F Yu, M Feng, Z Qian, J Lu.
+    <article class="work-item">
+      <div class="work-item__content">
+        <p class="work-meta">MICCAI 2026</p>
+        <h3>Hierarchical Cross-Modal Fusion with Modality-Specific Training Paradigms for High-Precision Non-Invasive Aging Assessment</h3>
+        <p class="work-authors">Yihang Wu, Junnan Xu, Guocong Li, Shuaihan Huang, <strong>Bo Cao</strong>, Yiwen Zhang</p>
+      </div>
+    </article>
 
+    <article class="work-item">
+      <div class="work-item__content">
+        <p class="work-meta">American Journal of Neuroradiology</p>
+        <h3>
+          <a href="https://www.ajnr.org/content/47/5/1212">
+            Deep Learning Radiomics Signature from Multicontrast MRI for Automated Identification of Symptomatic Carotid Plaques
+          </a>
+        </h3>
+        <p class="work-authors">Q. Gai<sup>†</sup>, J. Zhou<sup>†</sup>, Y. Zhang<sup>†</sup>, <strong>Bo Cao</strong>, F. Yu, M. Feng, J. Lu</p>
+      </div>
+    </article>
 
-# 📖 Educations
-- *2025.09 - now*,     **Ph.D.**,    Biomedical Engineering,   Fuwai Hospital, **Peking Union Medical College (Chinese Academy of Medical Sciences)**, China.
-- *2022.09 - 2025.06*, **Master**,   Biomedical Engineering,   Xuanwu Hospital, **Capital Medical University**, China.
-- *2018.09 - 2022.06*, **Bachelor**, Software Engineering,     School of Artificial Intelligence, **Chongqing University of Technology**, China.
+    <article class="work-item">
+      <div class="work-item__content">
+        <p class="work-meta">MICCAI Workshop 2024</p>
+        <h3>
+          <a href="https://adsmi-miccai.github.io/">
+            Variational Multimodal Distillation for Diagnosing Plaque Vulnerability in Carotid 3D MRI
+          </a>
+        </h3>
+        <p class="work-authors"><strong>Bo Cao</strong>, F. Yu, M. Feng, Z. Qian, J. Lu</p>
+      </div>
+    </article>
+  </section>
 
+  <section class="home-section resume-grid" id="experience">
+    <div class="resume-column">
+      <div class="section-heading">
+        <h2>Experience</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <time>2026–now</time>
+          <div>
+            <h3>Keya Medical</h3>
+            <p>Algorithm Engineering Intern</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <time>2025</time>
+          <div>
+            <h3>TowardPi</h3>
+            <p>LLM Algorithm Engineering Intern</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <time>2023–24</time>
+          <div>
+            <h3>United Imaging Research</h3>
+            <p>Algorithm Engineering Intern</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-# 💻 Internships
-- *2025.12 - now*, **Algorithm Engineer** [Keya Medical](https://www.keyamedical.com/), Beijing, China
-- *2025.06 - 2025.09*, **LLM Algorithm Engineer** [TowardPi (Beijing) Medical Technology Ltd.](https://en.towardpi.com/), Beijing, China.
-- *2023.09 - 2024.03*, **Algorithm Engineer** [Beijing United-Imaging Research Institute of Intelligent Imaging](https://global.united-imaging.com/en/), Beijing, China.
+    <div class="resume-column" id="education">
+      <div class="section-heading">
+        <h2>Education</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <time>2025–now</time>
+          <div>
+            <h3>Peking Union Medical College</h3>
+            <p>Ph.D. in Biomedical Engineering</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <time>2022–25</time>
+          <div>
+            <h3>Capital Medical University</h3>
+            <p>M.Eng. in Biomedical Engineering</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <time>2018–22</time>
+          <div>
+            <h3>Chongqing University of Technology</h3>
+            <p>B.Eng. in Software Engineering</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-
-# 🥇 Honors and Awards
-- 
-
-<div  width="400" height="300">
- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=n&d=VF6O719bynbNiIaQTdNJx3NJZY40ngAXbWC5Rk0_cu0&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
+  <footer class="home-footer">
+    <p>Based in Beijing. Working across medical imaging, multimodal learning, and clinical language.</p>
+  </footer>
 </div>

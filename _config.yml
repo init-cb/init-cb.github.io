@@ -7,8 +7,8 @@
 
 # Site Settings
 title                    : "Bo Cao"
-description              : "Fuwai Hospital, Peiking Union Medical College & Chinese Academy of Medical Sciences"
-repository               : "BoCao/init-cb.github.io"
+description              : "Ph.D. student at Fuwai Hospital working on multimodal learning for cardiac MRI and clinical reporting."
+repository               : "init-cb/init-cb.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -23,8 +23,8 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Bo Cao (曹波)"
   avatar           : "images/android-chrome-512x512.png"
-  bio              : "Ph.D. student in Biomedical Engineering at PUMC, focusing on medical AI, VLM."
-  location         : "Beijing, China."
+  bio              : "Ph.D. student in Biomedical Engineering at Fuwai Hospital, focusing on medical imaging and multimodal learning."
+  location         : "Beijing, China"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=dolRmMkAAAAJ"
