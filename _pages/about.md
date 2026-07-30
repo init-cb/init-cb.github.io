@@ -12,9 +12,13 @@ redirect_from:
 
 <div class="home-shell">
   <header class="home-hero" id="about">
-    <p class="home-kicker">Bo Cao <span>曹波</span></p>
-    <h1>Vision-language learning for cardiac MRI and clinical reporting.</h1>
-
+    <!-- <p class="home-kicker">Bo Cao <span>曹波</span></p>
+    <h1>Vision-language learning for cardiac MRI and clinical reporting.</h1> -->
+    <h2 class="home-kicker">Bo Cao <span>曹波</span></h2>
+    <img
+  class="home-portrait"
+  src="{{ '/images/android-chrome-512x512.png' | relative_url }}"
+  alt="Portrait of Bo Cao">
     <div class="home-intro">
       <p>
         I am a Ph.D. student in Biomedical Engineering at Fuwai Hospital,
@@ -24,7 +28,7 @@ redirect_from:
       <p>
         My research focuses on multimodal medical AI, particularly vision-language
         alignment, visual question answering, and quantitatively grounded report
-        generation for cardiac MRI. Previously, I studied carotid MRI and
+        generation for cardiac MRI. Previously, I studied AI in carotid MRI and
         atherosclerosis at Xuanwu Hospital under the supervision of Prof. Jie Lu.
       </p>
     </div>
