@@ -3,5 +3,8 @@ main:
   - title: "Work"
     url: "/#selected-work"
 
+  - title: "Experience"
+    url: "/#experience"
+
   - title: "Tracks"
     url: "/tracks/"

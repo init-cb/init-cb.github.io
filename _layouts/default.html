@@ -3,7 +3,7 @@ layout: compress
 ---
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en" class="no-js{% if page.body_class == 'home-page' %} home-document{% endif %}">
   <head>
     {% include head.html %}
     {% include head/custom.html %}

@@ -14,6 +14,9 @@ var breaks = [];
 
 function updateNav() {
 
+  // Pages with the static profile navigation do not use this plugin.
+  if (!$nav.length) return;
+
   var availableSpace = $btn.hasClass('hidden') ? $nav.width() : $nav.width() - $btn.width() - 30;
 
   // The visible list is overflowing the nav

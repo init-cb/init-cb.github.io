@@ -12,23 +12,25 @@ redirect_from:
 
 <div class="home-shell">
   <header class="home-hero" id="about">
-    <!-- <p class="home-kicker">Bo Cao <span>曹波</span></p>
-    <h1>Vision-language learning for cardiac MRI and clinical reporting.</h1> -->
-    <h2 class="home-kicker">Bo Cao <span>曹波</span></h2>
+    <h1>Bo Cao <span lang="zh">曹波</span></h1>
     <img
-  class="home-portrait"
-  src="{{ '/images/android-chrome-512x512.png' | relative_url }}"
-  alt="Portrait of Bo Cao">
+      class="home-portrait"
+      src="{{ '/images/android-chrome-512x512.png' | relative_url }}"
+      alt="Portrait of Bo Cao"
+      width="112"
+      height="136"
+    >
+
     <div class="home-intro">
       <p>
-        I am a Ph.D. student in Biomedical Engineering at Fuwai Hospital,
+        I am a Ph.D. student in Biomedical Engineering at <strong>Fuwai Hospital</strong>,
         Peking Union Medical College and the Chinese Academy of Medical Sciences,
         advised by Prof. Minjie Lu.
       </p>
       <p>
-        My research focuses on multimodal medical AI, particularly vision-language
+        My research focuses on <strong>multimodal medical AI</strong>, particularly vision-language
         alignment, visual question answering, and quantitatively grounded report
-        generation for cardiac MRI. Previously, I studied AI in carotid MRI and
+        generation for <strong>cardiac MRI</strong>. Previously, I studied AI in carotid MRI and
         atherosclerosis at Xuanwu Hospital under the supervision of Prof. Jie Lu.
       </p>
     </div>
@@ -46,11 +48,19 @@ redirect_from:
     </div>
     <div class="news-list">
       <div class="news-item">
+        <time datetime="2026-11">Nov 2026</time>
+        <p>I completed my internship at Anker Innovations’ Health Algorithm Center.</p>
+      </div>
+      <div class="news-item">
+        <time datetime="2026-09">Sep 2026</time>
+        <p>I joined Anker Innovations’ Health Algorithm Center as an Algorithm Engineering Intern.</p>
+      </div>
+      <div class="news-item">
         <time datetime="2026-06">Jun 2026</time>
         <p>Our work on non-invasive aging assessment was accepted to MICCAI 2026.</p>
       </div>
       <div class="news-item">
-        <time datetime="2026-01">Jan 2026</time>
+        <time datetime="2026-02">Feb 2026</time>
         <p>I joined Keya Medical as an Algorithm Engineering Intern.</p>
       </div>
       <div class="news-item">
@@ -145,67 +155,75 @@ redirect_from:
     </article>
   </section>
 
-  <section class="home-section resume-grid" id="experience">
-    <div class="resume-column">
-      <div class="section-heading">
-        <h2>Experience</h2>
+  <section class="home-section" id="experience" aria-labelledby="experience-heading">
+    <div class="section-heading">
+      <h2 id="experience-heading">Experience</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date"><time datetime="2026-09">Sep 2026</time> — <time datetime="2026-11">Nov 2026</time></div>
+        <div>
+          <h3>Anker Innovations <span lang="zh">安克创新</span></h3>
+          <p>Algorithm Engineering Intern</p>
+          <p class="timeline-detail">Health Algorithm Center · <span lang="zh">健康算法中心</span></p>
+        </div>
       </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <time>2026–now</time>
-          <div>
-            <h3>Keya Medical</h3>
-            <p>Algorithm Engineering Intern</p>
-          </div>
+      <div class="timeline-item">
+        <div class="timeline-date"><time datetime="2026-02">Feb 2026</time> — <time datetime="2026-05">May 2026</time></div>
+        <div>
+          <h3>Keya Medical</h3>
+          <p>Algorithm Engineering Intern</p>
         </div>
-        <div class="timeline-item">
-          <time>2025</time>
-          <div>
-            <h3>TowardPi</h3>
-            <p>LLM Algorithm Engineering Intern</p>
-          </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date"><time datetime="2025">2025</time></div>
+        <div>
+          <h3>TowardPi</h3>
+          <p>LLM Algorithm Engineering Intern</p>
         </div>
-        <div class="timeline-item">
-          <time>2023–24</time>
-          <div>
-            <h3>United Imaging Research</h3>
-            <p>Algorithm Engineering Intern</p>
-          </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date"><time datetime="2023">2023</time> — <time datetime="2024">2024</time></div>
+        <div>
+          <h3>United Imaging Research</h3>
+          <p>Algorithm Engineering Intern</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="resume-column" id="education">
-      <div class="section-heading">
-        <h2>Education</h2>
+  <section class="home-section" id="education" aria-labelledby="education-heading">
+    <div class="section-heading">
+      <h2 id="education-heading">Education</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date"><time datetime="2025">2025</time> — Present</div>
+        <div>
+          <h3>Peking Union Medical College</h3>
+          <p>Ph.D. in Biomedical Engineering</p>
+          <p class="timeline-detail">Fuwai Hospital · Advisor: Prof. Minjie Lu</p>
+        </div>
       </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <time>2025–now</time>
-          <div>
-            <h3>Peking Union Medical College</h3>
-            <p>Ph.D. in Biomedical Engineering</p>
-          </div>
+      <div class="timeline-item">
+        <div class="timeline-date"><time datetime="2022">2022</time> — <time datetime="2025">2025</time></div>
+        <div>
+          <h3>Capital Medical University</h3>
+          <p>M.Eng. in Biomedical Engineering</p>
         </div>
-        <div class="timeline-item">
-          <time>2022–25</time>
-          <div>
-            <h3>Capital Medical University</h3>
-            <p>M.Eng. in Biomedical Engineering</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <time>2018–22</time>
-          <div>
-            <h3>Chongqing University of Technology</h3>
-            <p>B.Eng. in Software Engineering</p>
-          </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date"><time datetime="2018">2018</time> — <time datetime="2022">2022</time></div>
+        <div>
+          <h3>Chongqing University of Technology</h3>
+          <p>B.Eng. in Software Engineering</p>
         </div>
       </div>
     </div>
   </section>
 
   <footer class="home-footer">
+    <a class="back-to-top" href="#about">Back to top</a>
     <p>Based in Beijing. Working across medical imaging, multimodal learning, and clinical language.</p>
   </footer>
 </div>
